@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+body {background-color: coral;}
+.carousel {
+  width:1000px;
+  height:500px;
+  margin: auto;
+}
