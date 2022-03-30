@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Booking = require("../db");
+const Booking = require("../models/booking");
 
 router.get("/getAll", async (req, res, next) => {
     try {
@@ -26,7 +26,7 @@ router.post('/create', ({ body: booking }, res, next) => {
       .catch((err) => next({ status: 400, message: err.message }));
   });
 
-router.put("/replac/:id", async({ query: newBooking, params: { id }}, res, next) => {
+router.put("/replace/:id", async({ query: newBooking, params: { id }}, res, next) => {
     try{
         await Booking.findByIdAndUpdate(id, newBooking);
         const updatedBooking = await Booking.findById(id);

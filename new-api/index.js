@@ -7,6 +7,7 @@ const app = express();
 app.use(parser.json());
 
 const movieRoutes = require("./routes/movieRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 app.use((req, res, next) => {
   // eslint-disable-next-line no-console
@@ -19,6 +20,8 @@ app.get("/", (request, response) => {
 });
 
 app.use("/movie", movieRoutes);
+
+app.use("/booking", bookingRoutes);
 
 app.use("*", (req, res, next) => next({ status: 404, message: "Invalid URL" }));
 

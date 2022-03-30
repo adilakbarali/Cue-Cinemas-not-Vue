@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
 
-mongoose.connect("mongodb+srv://admin-1:root@cluster0.06yd2.mongodb.net/main?retryWrites=true&w=majority",{
-    useNewUrlParser: true,
+mongoose.connect("mongodb+srv://admin-1:root@cluster0.06yd2.mongodb.net/main?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
 });
-
 
 const bookingSchema = new Schema({
     screenId: {
@@ -31,7 +29,7 @@ const bookingSchema = new Schema({
     concessions: {
         type: Array,
         required: true,
-    },
-});
+    }
+  });
 
 module.exports = mongoose.model("Booking", bookingSchema);
