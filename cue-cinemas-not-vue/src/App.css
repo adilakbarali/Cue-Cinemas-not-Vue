@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #c33be686;
 }
 
 .App-logo {
@@ -41,4 +42,18 @@ body {background-color: coral;}
   width:1000px;
   height:500px;
   margin: auto;
+}
+
+.col-sm {
+  width:33%;
+
+}
+
+.col {
+  max-height: 250px;
+
+}
+
+.aboutUs {
+  background-color: antiquewhite;
 }

@@ -1,11 +1,17 @@
 import HomeSlideShow from "./HomeSlideShow";
 
 const HomePage = () => {
-    return ( 
-        <HomeSlideShow/>
-        
+    return (
 
-     );
+        <>
+
+            <HomeSlideShow />
+            
+
+        </>
+
+
+    );
 }
- 
+
 export default HomePage;
