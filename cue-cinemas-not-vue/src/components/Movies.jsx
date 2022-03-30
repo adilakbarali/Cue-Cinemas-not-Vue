@@ -1,3 +1,5 @@
+import {Container, Row} from 'react-bootstrap';
+
 const Movies = ({data}) => {
     
     let actorString = ""
@@ -5,15 +7,17 @@ const Movies = ({data}) => {
         actorString = actorString + data.actors[i] + ", " 
     }
 
+    
+
     return (
 
         <>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col" >
+            <Container>
+                <Row>
+                    <Col>
 
-                    </div>
+                    </Col>
                     <div class="col-8" >
                         <div>
                             <img src={data.images[0]}
@@ -35,7 +39,7 @@ const Movies = ({data}) => {
 
                     </div>
                 </div>
-            </div>
+            </Container>
 
 
         </>
