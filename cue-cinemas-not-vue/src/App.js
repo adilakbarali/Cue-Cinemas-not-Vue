@@ -6,14 +6,18 @@ import HomePage from './components/HomePage';
 import HomeSlideShow from './components/HomeSlideShow';
 import AboutUs from './components/AboutUs';
 import NewMovies from './components/NewMovies';
+import ContactEmailForm from './components/ContactEmailForm';
+import Footer from './components/Footer';
+import ContactUsPage from './components/ContactUsPage';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      
       {/* <HomePage/> */}
       {/* <AboutUs/> */}
-      <NewMovies></NewMovies>
+      {/* <NewMovies></NewMovies> */}
+      <ContactUsPage/>
     </div>
   );
 }
