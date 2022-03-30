@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage';
 import HomeSlideShow from './components/HomeSlideShow';
 import AboutUs from './components/AboutUs';
-import NewMovies from './components/NewMovies';
+
+import NewReleases from './components/NewReleasesPage';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <NavBar/>
       {/* <HomePage/> */}
       {/* <AboutUs/> */}
-      <NewMovies></NewMovies>
+      <NewReleases></NewReleases>
     </div>
   );
 }

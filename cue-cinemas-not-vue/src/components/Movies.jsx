@@ -1,4 +1,10 @@
-const NewMovies = () => {
+const Movies = ({data}) => {
+    
+    let actorString = ""
+    for (let i = 0; i < data.actors.length; i++) {
+        actorString = actorString + data.actors[i] + ", " 
+    }
+
     return (
 
         <>
@@ -10,24 +16,18 @@ const NewMovies = () => {
                     </div>
                     <div class="col-8" >
                         <div>
-                            <img src="https://m.media-amazon.com/images/M/MV5BOGE2NWUwMDItMjA4Yi00N2Y3LWJjMzEtMDJjZTMzZTdlZGE5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg"
-                                alt="batman" width="100%" object-fit="cover" />
+                            <img src={data.images[0]}
+                                alt="batman" />
                         </div>
                         <div>
                             <div>
-                                Film title
+                                Film title: {data.title}
                             </div>
                             <div>
-                                Cast members
+                                Cast: {actorString}
                             </div>
                             <div>
-                                Age rating
-                            </div>
-                            <div>
-                                Film duration
-                            </div>
-                            <div>
-                                Available times
+                                Director: {data.director}
                             </div>
                         </div>
                     </div>
@@ -43,4 +43,4 @@ const NewMovies = () => {
     );
 }
 
-export default NewMovies;
+export default Movies;
