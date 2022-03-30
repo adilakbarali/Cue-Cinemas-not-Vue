@@ -7,21 +7,22 @@ const HomeSlideShow = () => {
     return (
         <>
             <Carousel>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-10 h-10"
-                        src="https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec"
+                        src="https://mvcdn.fancaps.net/3369637.jpg"
                         alt="First slide"
+                        
                     />
                     <Carousel.Caption>
                         <h3>First slide label</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1000}>
                     <img
-                        className="d-block w-50 h-10"
-                        src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/mrbs_1sht_tsr_plf_1350x2000_thumbnail_675x1000_thumbnail_0.jpg"
+                        className="d-block w-10 h-10"
+                        src="https://mvcdn.fancaps.net/3005633.jpg"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -32,7 +33,7 @@ const HomeSlideShow = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-10 h-10"
-                        src="https://cdn.realsport101.com/images/ncavvykf/gfinityesports/c5b19062e264f79fef7e63accb9248d90ba0b7c8-1280x720.jpg?rect=0,0,1279,720&w=700&h=394&dpr=2"
+                        src="https://mvcdn.fancaps.net/2106092.jpg"
                         alt="Third slide"
                     />
                     <Carousel.Caption>
