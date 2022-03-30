@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #c33be686;
 }
 
 .App-logo {
@@ -35,4 +36,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+body {background-color: coral;}
+.carousel {
+  width: 100%;
+  height:100%;
+  margin: auto;
+}
+
+.col-sm {
+  width:33%;
+
+}
+
+.col {
+  max-height: 250px;
+
+}
+
+.aboutUs {
+  background-color: antiquewhite;
+}
+.col-md-auto{
+  background-color: antiquewhite;
+}
+h2{
+  text-align: left;
+}
+h4{
+  text-align: left;
+}
+h5{
+  text-align: left;
+
 }
