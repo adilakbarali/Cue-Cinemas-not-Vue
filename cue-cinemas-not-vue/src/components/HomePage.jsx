@@ -1,14 +1,14 @@
+import HomePageFilmList from "./HomePageFilmList";
 import HomeSlideShow from "./HomeSlideShow";
 
 const HomePage = () => {
-    return (
-
+    return ( 
         <>
-
-            <HomeSlideShow />
-            
-
+        <HomeSlideShow/><br></br>
+        <br></br>
+        <HomePageFilmList/>
         </>
+
 
 
     );
