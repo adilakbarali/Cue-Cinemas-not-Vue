@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const BookingForm = (sID) => {
     
@@ -44,6 +45,7 @@ const BookingForm = (sID) => {
 
     return ( 
         <>
+        <Card className="bg-dark text-white" style={{width:'20rem'}}>
             <Form>
                 <Form.Group className="mb-3" controlId="formFullName">
                     <Form.Label>Full Name</Form.Label>
@@ -107,6 +109,7 @@ const BookingForm = (sID) => {
                     Book!
                 </Button>
             </Form>
+    </Card>
         </>
      );
 }
