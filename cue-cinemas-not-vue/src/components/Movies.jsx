@@ -6,11 +6,16 @@ import Col from 'react-bootstrap/Col';
 
 const Movies = ({ data }) => {
 
+
+    
     let actorString = ""
     for (let i = 0; i < data.actors.length; i++) {
         actorString = actorString + data.actors[i] + ", "
     } 
  
+
+    
+
     return (
         <>
             <Container>
