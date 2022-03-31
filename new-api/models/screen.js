@@ -5,31 +5,27 @@ mongoose.connect("mongodb+srv://admin-1:root@cluster0.06yd2.mongodb.net/main?ret
   useNewUrlParser: true,
 });
 
-const bookingSchema = new Schema({
-    screen_id: {
+const screenSchema = new Schema({
+    screen_type: {
         type: String,
         required: true,
     },
-    full_name: {
+    date_time: {
+        type: Date,
+        required: true,
+    },
+    movie_id: {
         type: String,
-        required: true,
-    },
-    number_of_seats: {
-        type: Number,
-        required: true,
-    },
-    number_of_adults: {
-        type: Number,
         requied: true,
     },
-    number_of_children: {
+    total_seats: {
         type: Number,
         required: true,
     },
-    concessions: {
+    available_seats: {
         type: Array,
         required: true,
     }
   });
 
-module.exports = mongoose.model("Booking", bookingSchema);
+module.exports = mongoose.model("Screen", screenSchema);

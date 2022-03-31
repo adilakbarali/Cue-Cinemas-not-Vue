@@ -5,6 +5,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import logo from '../resources/logo.png'
+
 
 const NavBar = () => {
   return (
@@ -12,7 +14,7 @@ const NavBar = () => {
       <Navbar bg="blue" expand="lg">
         <Container fluid>
           <Navbar.Brand href="/">
-            <img src="https://i0.wp.com/www.opindia.com/wp-content/uploads/2022/03/smith.jpg?resize=696%2C398&ssl=1" width="100" height="100" alt="marty vs oscar" />
+            <img src={logo} width="100" height="100" alt="Cue Cinemas" />
             CueCinemasNotVue
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

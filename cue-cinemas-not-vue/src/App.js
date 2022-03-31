@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage';
@@ -9,6 +8,8 @@ import NewMovies from './components/NewMovies';
 import ContactEmailForm from './components/ContactEmailForm';
 import Footer from './components/Footer';
 import ContactUsPage from './components/ContactUsPage';
+import BookingForm from './components/BookingForm';
+
 
 function App() {
   return (
