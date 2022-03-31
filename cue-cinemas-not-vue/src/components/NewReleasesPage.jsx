@@ -47,7 +47,7 @@ const NewReleasesPage = () => {
 
 
         {movieData.map((movie, key) => {
-          if (movie.release_date > currentDate) {
+          if (movie.release_date < currentDate) {
             return <Movies data={movie} key={key} />;
           }
           
