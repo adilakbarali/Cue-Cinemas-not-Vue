@@ -6,7 +6,6 @@ import HomeSlideShow from './components/HomeSlideShow';
 import AboutUs from './components/AboutUs';
 import Movies from './components/Movies';
 import NewReleases from './components/NewReleasesPage';
-import NewMovies from './components/NewMovies';
 import ContactEmailForm from './components/ContactEmailForm';
 import Footer from './components/Footer';
 import ContactUsPage from './components/ContactUsPage';
@@ -18,9 +17,9 @@ function App() {
       
       {/* <HomePage/> */}
       {/* <AboutUs/> */}
+      <NavBar/>
       <NewReleases/>
-      {/* <NewMovies></NewMovies> */}
-      <ContactUsPage/>
+      <Footer/>
     </div>
   );
 }
