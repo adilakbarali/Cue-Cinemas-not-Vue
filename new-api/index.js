@@ -1,11 +1,11 @@
 /* eslint-disable quotes */
 const express = require("express");
 const parser = require("body-parser");
-
+const cors = require("cors");
 const app = express();
 
 app.use(parser.json());
-
+app.use(cors());
 const movieRoutes = require("./routes/movieRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 
