@@ -1,4 +1,4 @@
-import {Container, Row} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 
 const Movies = ({data}) => {
     
@@ -13,12 +13,12 @@ const Movies = ({data}) => {
 
         <>
 
-            <Container>
+            <Container >
                 <Row>
                     <Col>
 
                     </Col>
-                    <div class="col-8" >
+                    <Col xs={8}>
                         <div>
                             <img src={data.images[0]}
                                 alt="batman" />
@@ -34,11 +34,11 @@ const Movies = ({data}) => {
                                 Director: {data.director}
                             </div>
                         </div>
-                    </div>
-                    <div class="col" >
+                    </Col>
+                    <Col>
 
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             </Container>
 
 
