@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <NavBar/>
       {/* <HomePage/> */}
-      {/* <AboutUs/> */}
-      <NewReleases></NewReleases>
+      <AboutUs/>
+      {/* <NewReleases></NewReleases> */}
     </div>
   );
 }
