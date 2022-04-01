@@ -3,14 +3,14 @@ import { CardGroup, Card } from "react-bootstrap";
 const PTGDrinkCards = () => {
     return ( 
         <>
-        <div style={{border: '2px solid white'}}>
+        <div className="placesCardTitle">
         <h2>Have a Drink... or Two</h2>
         <h4>We ask that you refrain from entering the cinema inebriated but feel free to go crazy after your viewing</h4>
         </div>
         <CardGroup>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.5fVrDdAy8ZzIK5yTPPnCmQHaEq?w=286&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body className="places-card-body">
             <Card.Title>CueNotVue Who is You?</Card.Title>
             <Card.Text>
               Our in-house bar is great for large bookings and even pricate hire!
@@ -26,7 +26,7 @@ const PTGDrinkCards = () => {
         </Card>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.SLSqZV0VfPkcGrmrbGtcYwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body className="places-card-body">
             <Card.Title>The Old Swan</Card.Title>
             <Card.Text>
                 Maybe you're a person of simple pleasures...Not to worry!
@@ -47,7 +47,7 @@ const PTGDrinkCards = () => {
         </Card>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.XNVsQ9QMF2sgfOo9poPyaQHaE8?w=241&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body  className="places-card-body">
             <Card.Title>Johnnies Sport Bar</Card.Title>
             <Card.Text>
               IT'S COMING HOME!!!

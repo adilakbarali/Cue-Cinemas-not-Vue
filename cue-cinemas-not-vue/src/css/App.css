@@ -128,6 +128,7 @@ h5 {
   -webkit-box-orient: vertical;
 }
 
+
 .rows {
   background-color: #1f2041;
   padding: 2.5% 2.5% 2.5%;
@@ -137,4 +138,18 @@ h5 {
   max-width: 100%;
   height: auto;
   max-height: 100%;
+
+.placesToGoHeader {
+  background-color: linen;
+  border: 2px white;
+}
+
+.placesCardTitle {
+  background-color: white;
+  border: 2px white;
+}
+
+.places-card-body {
+  
+
 }

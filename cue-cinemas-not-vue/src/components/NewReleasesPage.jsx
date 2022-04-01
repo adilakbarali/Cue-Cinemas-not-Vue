@@ -30,7 +30,7 @@ const NewReleasesPage = () => {
         setError(error);
       });
 
-  }); // everytime the state 'amount' is updated the useEffect runs again
+  }, []); // everytime the state 'amount' is updated the useEffect runs again
 
 
   // Make if else statements to determine what our react app should return

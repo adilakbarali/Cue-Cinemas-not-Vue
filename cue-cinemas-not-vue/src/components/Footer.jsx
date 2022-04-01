@@ -10,10 +10,12 @@ const Footer = () => {
           <div className='row mt-3'>
             <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
-                <i className='fas fa-gem me-3'></i>Cue Not Vue Cinemas
+                <i className='fas fa-gem me-3'></i>Cue Not Vue Cinemas ©
               </h6>
               <p>
-               Come and join us at Londons finest cinema with state of the art screens with prices starting from only £100.
+               Founded in 2022, CueNotVue corporation prides itself on providing comfort and top quality entertainment to people of all backgrounds.
+               <br />
+               Head over to our contact page to find out more about our policies and what we're proud of.
               </p>
             </div>
 
@@ -42,25 +44,25 @@ const Footer = () => {
             </div>
 
             <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
+              <h6 className='text-uppercase fw-bold mb-4'>Causes we support</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Pricing
+                  Children in need
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Settings
+                  Refugee helpine
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Orders
+                  Macmillan
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Help
+                  Alzheimers Research
                 </a>
               </p>
             </div>
@@ -68,7 +70,7 @@ const Footer = () => {
             <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
-                <i className='fas fa-home me-3'></i> London, NW11 6SX, UK
+                <i className='fas fa-home me-3'></i> Glasgow, G34 9DL, UK
               </p>
               <p>
                 <i className='fas fa-envelope me-3'></i>
