@@ -9,7 +9,9 @@ const PlacesToGoPage = () => {
         
         <br />
         <br />
+        <div className="placesToGoHeader">
         <h1>Explore the area!</h1>
+        </div>
         <br />
         <PlacesToGoRestaurantCards/>
         <br />

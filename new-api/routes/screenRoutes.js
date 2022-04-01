@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 // eslint-disable-next-line quotes
 const router = require("express").Router();
-const Movie = require("../models/screen");
+const Screen = require("../models/screen");
 
 router.get("/getAll", async (req, res, next) => {
   try {

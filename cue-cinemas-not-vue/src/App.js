@@ -6,6 +6,7 @@ import HomeSlideShow from './components/HomeSlideShow';
 import AboutUs from './components/AboutUs';
 import Movies from './components/Movies';
 import NewReleases from './components/NewReleasesPage';
+
 import ContactEmailForm from './components/ContactEmailForm';
 import Footer from './components/Footer';
 import ContactUsPage from './components/ContactUsPage';
@@ -17,9 +18,11 @@ import PlacesToGoPage from './components/PlacesToGoPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
+
 function App() {
  
   return (
+
     <>
       <Router>
         <NavBar />
@@ -38,6 +41,7 @@ function App() {
         <Footer />
       </Router>
     </>
+
   );
 }
 
