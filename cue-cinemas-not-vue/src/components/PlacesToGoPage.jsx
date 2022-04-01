@@ -6,7 +6,7 @@ import PTGDrinkCards from "./PTGDrinkCards";
 const PlacesToGoPage = () => {
     return ( 
         <>
-        <NavBar/>
+        
         <br />
         <br />
         <h1>Explore the area!</h1>

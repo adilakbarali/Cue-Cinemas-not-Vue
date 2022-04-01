@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #c33be686;
+  background-color: #1f2041 !important;
 }
 
 .App-logo {
@@ -38,8 +38,7 @@
   }
 }
 
-/* body {background-color: coral;} */
-body {background-color: coral;}
+
 
 .carousel {
   width: 100%;
@@ -71,10 +70,52 @@ h5{
   text-align: left;
 }
 
-.card {
-  margin: 0 auto; /* Added */
+.moviesCard {
+  margin: 0; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
+  background-color: #1f2041 !important;
+}
+
+.moviesTitle {
+  font-family: Tahoma, Geneva, sans-serif;
+font-size: 42px;
+letter-spacing: 0.8px;
+word-spacing: 0px;
+color: #FFFFFF;
+font-weight: normal;
+text-decoration: rgb(68, 68, 68);
+font-style: normal;
+font-variant: small-caps;
+text-transform: none;;
+}
+
+.moviesCast{
+  font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+letter-spacing: 0.8px;
+word-spacing: 0px;
+color: #FFFFFF;
+font-weight: normal;
+text-decoration: rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+text-align: left;
+}
+
+.moviesDescription{
+  font-family: Georgia, serif;
+font-size: 16px;
+letter-spacing: 0.8px;
+word-spacing: -1.8px;
+color: #FFFFFF;
+font-weight: normal;
+text-decoration: rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+text-align: left;
 }
 
 .Text {
@@ -83,4 +124,17 @@ h5{
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+.navbar{
+  background-color: #F5E7E0;
+}
+
+.ContainerClass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movieDescriptionBackground{
+  background-color: #1f2041;
 }

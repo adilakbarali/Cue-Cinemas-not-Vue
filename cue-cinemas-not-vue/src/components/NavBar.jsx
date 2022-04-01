@@ -6,17 +6,19 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import logo from '../resources/logo.png'
-
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
 const NavBar = () => {
   return (
     <>
       <Navbar bg="blue" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="/">
-            <img src={logo} width="100" height="100" alt="Cue Cinemas" />
-            CueCinemasNotVue
-          </Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand href="/">
+              <img src={logo} width="100" height="100" alt="Cue Cinemas" />
+              CueCinemasNotVue
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -24,20 +26,38 @@ const NavBar = () => {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
+              <LinkContainer to="/">
               <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">About Us</Nav.Link>
-              <NavDropdown title="What to Watch" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Films</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">New Releases</NavDropdown.Item>
-
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Contact Us
-                </NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown title="About Us" id="navbarScrollingDropdown">
+                <LinkContainer to="/AboutUs">
+                  <NavDropdown.Item href="#action2">About Us</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/ContactUs">
+                <NavDropdown.Item href="#action3">Contact Us</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item href="#action4">Opening Times</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link href="#" disabled>
-                Link
-              </Nav.Link>
+              <NavDropdown title="Films" id="navbarScrollingDropdown">
+                <LinkContainer to="/NewReleases">
+                <NavDropdown.Item href="#action5">New Releases</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/UpcomingReleases">
+                <NavDropdown.Item href="#action6">Upcoming Releases</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/Bookings">
+                <NavDropdown.Item href="#action7">Ticket Bookings</NavDropdown.Item>
+                </LinkContainer>
+              </NavDropdown>
+              <NavDropdown title="What's Going On?" id="navbarScrollingDropdown">
+                <LinkContainer to="/FindUs">
+                <NavDropdown.Item href="#action8">Find Us</NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/PlacesToGo">
+                <NavDropdown.Item href="#action9">Places to Go</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item href="#action10">Discussion Board</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
             <Form className="d-flex">
               <FormControl
