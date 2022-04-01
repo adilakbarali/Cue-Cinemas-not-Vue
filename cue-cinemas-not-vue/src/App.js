@@ -10,6 +10,7 @@ import ContactEmailForm from './components/ContactEmailForm';
 import Footer from './components/Footer';
 import ContactUsPage from './components/ContactUsPage';
 import BookingForm from './components/BookingForm';
+import Bookings from './components/Bookings';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       {/* <HomePage/> */}
       {/* <AboutUs/> */}
       <NavBar/>
-      <NewReleases/>
+      <Bookings/>
       <Footer/>
     </div>
   );

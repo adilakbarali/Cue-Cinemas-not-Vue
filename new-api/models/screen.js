@@ -23,7 +23,7 @@ const screenSchema = new Schema({
         required: true,
     },
     available_seats: {
-        type: Array,
+        type: Number,
         required: true,
     }
   });
