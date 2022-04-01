@@ -3,13 +3,13 @@ import { CardGroup, Card } from "react-bootstrap";
 const PTGActivitiesCards = () => {
     return ( 
         <>
-        <div style={{border: '2px solid white'}}>
+        <div className="placesCardTitle">
         <h2>Fun Fun Fun!</h2>
         </div>
         <CardGroup>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.2WixiK1_vaVG5EoSVkGXmwHaEU?w=284&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body className="places-card-body">
             <Card.Title>Gutterly Awful</Card.Title>
             <Card.Text>
               Who doesn't love bowling?
@@ -28,7 +28,7 @@ const PTGActivitiesCards = () => {
         </Card>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.sTyipkFf4OBunJNVQ1A8MgHaEc?w=306&h=183&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body className="places-card-body">
             <Card.Title>Area 51</Card.Title>
             <Card.Text>
                 Delve into the mysteries of this aien-themed arcade while you have a whale of a time.
@@ -51,7 +51,7 @@ const PTGActivitiesCards = () => {
         </Card>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.XoKFIcnGaSJ34Jtsen8-owHaFU?w=228&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
-          <Card.Body>
+          <Card.Body className="places-card-body">
             <Card.Title>BottomNotTop Golf</Card.Title>
             <Card.Text>
               Did you know we don't just do cinemas???

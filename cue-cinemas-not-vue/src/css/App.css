@@ -84,3 +84,17 @@ h5{
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.placesToGoHeader {
+  background-color: linen;
+  border: 2px white;
+}
+
+.placesCardTitle {
+  background-color: white;
+  border: 2px white;
+}
+
+.places-card-body {
+  
+}
