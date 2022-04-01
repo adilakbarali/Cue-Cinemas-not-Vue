@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Movies from "./Movies";
+import UpcomingMovies from "./UpcomingMovies";
 
 const UpcomingReleases = () => {
   const [movieData, setMovieData] = useState([]);
@@ -54,7 +54,7 @@ const UpcomingReleases = () => {
 
         {movieData.map((movie, key) => {
           if (movie.release_date > currentDate) {
-            return <Movies data={movie} key={key} />;
+            return <UpcomingMovies data={movie} key={key} />;
           }
           
         })}
