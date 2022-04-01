@@ -18,7 +18,7 @@ const Movies = ({ data }) => {
 
     return (
         <>
-            <Container>
+            <Container className="ContainerClass">
                 <Row>
                     <Col>
                     <img src={data.images[0]}
@@ -26,24 +26,25 @@ const Movies = ({ data }) => {
                     height='261px'/>
                     </Col>
                 <Col>
-                <Card style={{ width: '40rem' }}>
+                <Card className="moviesCard" style={{ width: '40rem'}}>
                     <Card.Body>
-                        <Card.Title>Film: {data.title}</Card.Title>
-                        <Card.Text>
-                            {data.description}
+                        <Card.Title className="moviesTitle">{data.title}</Card.Title>
+                        <Card.Text className="moviesCast">
+                        Cast: {actorString}
                         </Card.Text>
                     </Card.Body>
-                    <ListGroup className="list-group-flush">
-                        <ListGroupItem>Cast: {actorString}</ListGroupItem>
-                    </ListGroup>
                     <Card.Body>
-                    <Button variant="primary">Go somewhere</Button>
+                        <Card.Text className="moviesDescription">{data.description}</Card.Text>
+                    </Card.Body>
+                    <Card.Body>
+                    <Button variant="primary">Book now</Button>
                     </Card.Body>
                 </Card>
                 </Col>
                 </Row>
-                <br></br><br></br> <br></br>
+                
             </Container>
+            <br></br><br></br> <br></br>
         </>
 
      

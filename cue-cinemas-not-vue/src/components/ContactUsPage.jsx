@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 const ContactUsPage = () => {
     return ( 
         <>
-        <NavBar/>
         <ContactEmailForm/>
         <Footer/>
         </>
