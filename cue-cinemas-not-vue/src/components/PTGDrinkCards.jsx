@@ -7,12 +7,12 @@ const PTGDrinkCards = () => {
         <h2>Have a Drink... or Two</h2>
         <h4>We ask that you refrain from entering the cinema inebriated but feel free to go crazy after your viewing</h4>
         </div>
-        <CardGroup>
+        <CardGroup className="PlacesToGo" style={{width: '80rem'}}>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.5fVrDdAy8ZzIK5yTPPnCmQHaEq?w=286&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body className="places-card-body">
-            <Card.Title>CueNotVue Who is You?</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">CueNotVue Who is You?</Card.Title>
+            <Card.Text className="card-aboutUs-body">
               Our in-house bar is great for large bookings and even pricate hire!
               <br />
               With experieced bartenders, we can whip you up anything you would like... but we might judge.
@@ -27,8 +27,8 @@ const PTGDrinkCards = () => {
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.SLSqZV0VfPkcGrmrbGtcYwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body className="places-card-body">
-            <Card.Title>The Old Swan</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">The Old Swan</Card.Title>
+            <Card.Text className="card-aboutUs-body">
                 Maybe you're a person of simple pleasures...Not to worry!
                 <br />
             This local tavern is great for a quiet drink or a not so quiet karaoke session on Friday nights.
@@ -48,8 +48,8 @@ const PTGDrinkCards = () => {
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.XNVsQ9QMF2sgfOo9poPyaQHaE8?w=241&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body  className="places-card-body">
-            <Card.Title>Johnnies Sport Bar</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">Johnnies Sport Bar</Card.Title>
+            <Card.Text className="card-aboutUs-body">
               IT'S COMING HOME!!!
               <br />
               Get yourself down to the brand new sports bar open in the city center showing a range of sports accompanied by a range of drinks.

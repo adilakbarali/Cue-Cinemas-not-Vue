@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 class ContactForm extends Component {    
     constructor(props) {    
         super(props);    
@@ -37,6 +38,7 @@ class ContactForm extends Component {
             formIsValid = false;    
             formErrors["messageErr"] = "This field can not be left empty.";    
         }    
+
  
         this.setState({ formErrors: formErrors });    
         return formIsValid;    
