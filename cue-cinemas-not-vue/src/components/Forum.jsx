@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import ForumComments from "./ForumComments";
 
 const Forum = () => {
@@ -17,7 +18,7 @@ const Forum = () => {
         emailAddress: "",
         filmName: "",
         filmRating: 0,
-        message: "" 
+        message: ""
     }
 
     // How do we deal with data that takes a while to load?
@@ -30,16 +31,16 @@ const Forum = () => {
     const createNewComment = () => {
 
         axios.post(`http://localhost:4494/discussion/create`, newComment)
-        .then((response) => {
+            .then((response) => {
 
-            console.log(response)
+                console.log(response)
 
-        })
-        .catch((error) => {
+            })
+            .catch((error) => {
 
-            console.log(error)
+                console.log(error)
 
-        }) 
+            })
 
     }
 
@@ -78,25 +79,59 @@ const Forum = () => {
             <div>
                 <p> Welcome to the CueNotVue Forum </p>
 
-                <form action={createNewComment}>
-                    <input type="text" placeholder="Enter your name" onChange={(e) => commentObj.userName = e.target.value}/>
-                    <input type="email" placeholder="Enter your email" onChange={(e) => commentObj.emailAddress = e.target.value}/>
-                    <input type="text" placeholder="Which film are did you watch" onChange={(e) => commentObj.filmName = e.target.value}/>
-                    <input type="number" placeholder="Rate the film from 1 - 10" onChange={(e) => commentObj.userName = e.target.value}/>
-                    <input type="text" placeholder="Write your comment here" onChange={(e) => commentObj.message = e.target.value} />
-                </form>
+                <div>
+                    <Container className="ContainerClass">
+                        <Row>
+                            <Col>
+                                <Card className="forumCard" style={{ width: '40rem' }}>
+                                    <Card.Body>
+                                        <Card.Title className="commentName">
+                                            <input type="text" placeholder="Enter your name" onChange={(e) => commentObj.userName = e.target.value} />
+                                        </Card.Title>
+                                        <Card.Subtitle className="commentFilm">
+                                            <input type="email" placeholder="Enter your email" onChange={(e) => commentObj.emailAddress = e.target.value} />
+                                        </Card.Subtitle>
+                                        <Card.Text className="commentRating">
+                                            <input type="text" placeholder="Which film are did you watch" onChange={(e) => commentObj.filmName = e.target.value} />
+                                        </Card.Text>
+                                        <Card.Text className="commentRating">
+                                            <input type="number" placeholder="Rate the film from 1 - 10" onChange={(e) => commentObj.userName = e.target.value} />
+                                        </Card.Text>
+                                        <Card.Text>
+                                            <input type="text" placeholder="Write your comment here" onChange={(e) => commentObj.message = e.target.value} />
+                                        </Card.Text>
+                                        <Button variant="primary" onClick={createNewComment}>
+                                            Post Comment
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+
+                    </Container>
+                </div>
+
+                <br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+
 
                 {/* Add input fields here with submit button, which then adds object containing the data in the input fields to our MongoDB */}
                 {/* Map data from MongoDB onto this page in the form of ForumComments component */}
                 {/* Potentially add filter features, reply to specific comments,  */}
+                <div>
+                    {
+                        commentData.map((comment, key) => {
 
-                {/* {commentData.map((comment, key) => {
-                
-                    return <ForumComments data={comment} key={key} />;
-                
+                            return <ForumComments data={comment} key={key} /> ;
+                            
 
-                })} */}
-            </div>
+                        })
+                    }
+                </div>
+
+            </div >
         );
     };
 

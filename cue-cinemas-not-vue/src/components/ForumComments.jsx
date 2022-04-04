@@ -1,6 +1,6 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
 
-const ForumComments = () => {
+const ForumComments = ({data}) => {
     return ( 
 
         <Container className="ContainerClass">
@@ -8,13 +8,13 @@ const ForumComments = () => {
                 <Col>
                     <Card className="forumCard" style={{ width: '40rem' }}>
                         <Card.Body>
-                            <Card.Title className="commentName">Comment Author</Card.Title>
-                            <Card.Subtitle className="commentFilm">--movie from DB--</Card.Subtitle>
+                            <Card.Title className="commentName">{data.full_name}</Card.Title>
+                            <Card.Subtitle className="commentFilm">{data.movie_id}</Card.Subtitle>
                             <Card.Text className="commentRating">
-                                Film rating: --rating from DB--
+                                Film rating: {data.rating}
                             </Card.Text>
                             <Card.Text className="commentRating">
-                                --message from DB--
+                                {data.message}
                             </Card.Text>
                         </Card.Body>    
                     </Card>
