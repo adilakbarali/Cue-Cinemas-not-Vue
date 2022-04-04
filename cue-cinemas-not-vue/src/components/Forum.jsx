@@ -1,7 +1,8 @@
 // imports
 
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ForumComments from "./ForumComments";
 
 const Forum = () => {
 
@@ -52,7 +53,7 @@ const Forum = () => {
             .then((response) => {
                 // Take what axios returns, call it 'response' and print it out
 
-                setMovieData(response.data); // An array of objects stored as state
+                setCommentData(response.data); // An array of objects stored as state
 
                 setLoaded(true); // if there is a response, loaded = true
             }).catch((error) => {
@@ -77,16 +78,24 @@ const Forum = () => {
             <div>
                 <p> Welcome to the CueNotVue Forum </p>
 
+                <form action={createNewComment}>
+                    <input type="text" placeholder="Enter your name" onChange={(e) => commentObj.userName = e.target.value}/>
+                    <input type="email" placeholder="Enter your email" onChange={(e) => commentObj.emailAddress = e.target.value}/>
+                    <input type="text" placeholder="Which film are did you watch" onChange={(e) => commentObj.filmName = e.target.value}/>
+                    <input type="number" placeholder="Rate the film from 1 - 10" onChange={(e) => commentObj.userName = e.target.value}/>
+                    <input type="text" placeholder="Write your comment here" onChange={(e) => commentObj.message = e.target.value} />
+                </form>
+
                 {/* Add input fields here with submit button, which then adds object containing the data in the input fields to our MongoDB */}
                 {/* Map data from MongoDB onto this page in the form of ForumComments component */}
                 {/* Potentially add filter features, reply to specific comments,  */}
 
-                {commentData.map((comment, key) => {
+                {/* {commentData.map((comment, key) => {
                 
-                    return <UpcomingMovies data={movie} key={key} />;
+                    return <ForumComments data={comment} key={key} />;
                 
 
-                })}
+                })} */}
             </div>
         );
     };

@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 const ForumComments = () => {
     return ( 

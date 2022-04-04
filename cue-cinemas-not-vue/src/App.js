@@ -16,6 +16,7 @@ import UpcomingReleases from './components/UpcomingReleases';
 import FindUs from './components/FindUs';
 import PlacesToGoPage from './components/PlacesToGoPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Forum from './components/Forum';
 
 
 
@@ -35,7 +36,7 @@ function App() {
           <Route path="/Bookings" element={<BookingForm />}></Route>
           <Route path="/FindUs" element={<FindUs />}></Route>
           <Route path="/PlacesToGo" element={<PlacesToGoPage />}></Route>
-
+          <Route path="/Forum" element={<Forum />}></Route>
 
         </Routes>
         <Footer />
