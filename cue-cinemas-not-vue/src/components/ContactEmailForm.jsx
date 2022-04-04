@@ -1,46 +1,111 @@
-import { Form, Button } from 'react-bootstrap';
+import React, {Component} from "react";
 
-const ContactEmailForm = () => {
-    return ( 
-        <>
-        <h3>Let us know what you think!</h3>
-        <form id="contact-form" >
-    <div className="form-group">
-        <label htmlFor="name">Name</label>
-        <input type="text" className="form-control" />
-    </div>
-    <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
-        <input type="email" className="form-control" aria-describedby="emailHelp" />
-    </div>
-    <div className="form-group">
-        <label htmlFor="message">Message</label>
-        <textarea className="form-control" rows="5"></textarea>
-    </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
-</form>
-</>
-/* //         <div>
-//         <h1>Contact</h1><br></br>
-//         <Form>
-//           <Form.Group controlId="formBasicName">           
-//           <Form.Label>Name</Form.Label>
-//           <Form.Control />
-//           </Form.Group>
-
-//          <Form.Group controlId="formBasicEmail">
-//          <Form.Label>Email</Form.Label>
-//          <Form.Control/>
-//          </Form.Group>
-//         <Form.Group controlId="formBasicTextField">
-//         <Form.Label>Message</Form.Label>
-//         <Form.Control/>
-//         </Form.Group>
-//         <Button variant="succes" type="submit">Submit
-//         </Button>
-//       </Form>
-//    </div> */
-    )
-}
+class ContactForm extends Component {    
+    constructor(props) {    
+        super(props);    
+        this.state = {    
+            name: '',    
+            email: '',    
+            message: '',       
+            formErrors: {}    
+        };    
+    
+        this.initialState = this.state;    
+    }    
+    
+    handleFormValidation() {    
+        const { name, email, message } = this.state;    
+        let formErrors = {};    
+        let formIsValid = true;    
+         
+        if (!name) {    
+            formIsValid = false;    
+            formErrors["nameErr"] = "Name is required.";    
+        }    
+        
+        if (email) {    
+            formIsValid = false;    
+            formErrors["emailErr"] = "Email is required.";    
+        }    
+        else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {    
+    
+            formIsValid = false;    
+            formErrors["emailErr"] = "Invalid email.";    
+        }    
+       
+        if (!message) {    
+            formIsValid = false;    
+            formErrors["messageErr"] = "This field can not be left empty.";    
+        }    
  
-export default ContactEmailForm;
+        this.setState({ formErrors: formErrors });    
+        return formIsValid;    
+    }    
+    
+    handleChange = (e) => {    
+        const { name, value } = e.target;    
+        this.setState({ [name]: value });    
+    }    
+    
+    handleSubmit = (e) => {    
+        e.preventDefault();    
+    
+        if (this.handleFormValidation()) {    
+            alert('Your message has been sent!')    
+            this.setState(this.initialState)    
+        }    
+    }    
+    
+    render() {    
+    
+        const { nameErr, emailErr, messageErr } = this.state.formErrors;    
+    
+        return (    
+            <div className="formDiv">    
+                <h3 style={{ textAlign: "center" }} >Contact Us Form </ h3>    
+                <div>    
+                    <form onSubmit={this.handleSubmit}>    
+                        <div>    
+                            <label htmlFor="name">Name</label>    
+                            <input type="text" name="name"    
+                                value={this.state.name}    
+                                onChange={this.handleChange}    
+                                placeholder="Please enter your name.."    
+                                className={nameErr ? ' showError' : ''} />    
+                            {nameErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{nameErr}</div>    
+                            }    
+    
+                        </div>
+                        <div>    
+                            <label htmlFor="email">Email</label>    
+                            <input type="text" name="email"    
+                                value={this.state.email}    
+                                onChange={this.handleChange}    
+                                placeholder="Please enter your email.."    
+                                className={emailErr ? ' showError' : ''} />    
+                            {emailErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{emailErr}</div>    
+                            }    
+    
+                        </div>    
+                        <div>    
+                            <label htmlFor="text">Message</label>    
+                            <input type="text" name="message" rows={5}  
+                                value={this.state.message}    
+                                onChange={this.handleChange}    
+                                placeholder="Please enter your message.."    
+                                className={messageErr ? ' showError' : ''} />    
+                            {messageErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{messageErr}</div>    
+                            }    
+                        </div>    
+                        <input type="submit" value="Submit" />    
+                    </form>    
+                </div>    
+            </div >    
+        )    
+    }    
+}    
+    
+export default ContactForm;
