@@ -5,7 +5,7 @@ const MapCard = ({ cityData }) => {
   const mapRef = useRef(null);
   const titleRef = useRef(null);
   const controlRef = useRef(null);
-//   const layerRef = useRef(null);
+  //   const layerRef = useRef(null);
 
   titleRef.current = L.tileLayer(
     `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
@@ -18,7 +18,7 @@ const MapCard = ({ cityData }) => {
   const mapStyles = {
     overflow: "hidden",
     width: "50%",
-    height: "50vh"
+    height: "50vh",
   };
 
   const mapParams = {
@@ -51,22 +51,16 @@ const MapCard = ({ cityData }) => {
     });
   }, []);
 
-  //   useEffect(() => {
-  //     layerRef.current = L.layerGroup().addTo(mapRef.current);
-  //     controlRef.current.addOverlay(layerRef.current, "Circles");
-  //   }, []);
-
-  //   useEffect(() => {
-  //     layerRef.current.clearLayers();
-  //     Array.from(cityData).forEach((city) => {
-  //       L.circle(city.latLng, { radius: 100000 }).addTo(layerRef.current);
-  //     });
-  //   }, [cityData]);
-
   return (
-    <div>
-      <div id="map" style={mapStyles} className="center"/>
-    </div>
+    <>
+      <div className="placesToGoHeader">
+        <h1> Google Map: </h1>
+      </div>
+      <br />
+      <div>
+        <div id="map" style={mapStyles} className="center" />
+      </div>
+    </>
   );
 };
 
