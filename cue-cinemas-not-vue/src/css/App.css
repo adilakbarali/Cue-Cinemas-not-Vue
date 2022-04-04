@@ -120,8 +120,9 @@ font-style: normal;
 font-variant: normal;
 text-transform: none;
 text-align: left;
-=======
-.card-aboutUs {
+}
+
+.card-aboutUs{
   margin: 0 auto;
   /* Added */
   float: none;
@@ -184,10 +185,9 @@ text-align: left;
 
 .movieDescriptionBackground{
   background-color: #1f2041;
+}
 
-
-
-.rows {
+.rows{
   background-color: #1f2041;
   padding: 2.5% 2.5% 2.5%;
 }
@@ -196,8 +196,9 @@ text-align: left;
   max-width: 100%;
   height: auto;
   max-height: 100%;
+}
 
-.placesToGoHeader {
+.placesToGoHeader{
   background-color: linen;
   border: 2px white;
 }
@@ -208,7 +209,6 @@ text-align: left;
 }
 
 .places-card-body {
-  
 
 
 }
