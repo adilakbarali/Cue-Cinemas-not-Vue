@@ -56,7 +56,10 @@ const NavBar = () => {
                 <LinkContainer to="/PlacesToGo">
                 <NavDropdown.Item href="#action9">Places to Go</NavDropdown.Item>
                 </LinkContainer>
+                <LinkContainer to="/Forum">
                 <NavDropdown.Item href="#action10">Discussion Board</NavDropdown.Item>
+                </LinkContainer>
+                
               </NavDropdown>
             </Nav>
             <Form className="d-flex">

@@ -10,6 +10,15 @@ router.get("/getAll", async (req, res, next) => {
     }
 });
 
+router.get("/getLatest", async (req, res, next) => {
+    try {
+        const booking = await Booking.find().sort({ _id: -1 }).limit(1);
+        return res.json(booking);
+    } catch (err) {
+        return next({ status: 400, message: err.message});
+    }
+})
+
 router.get("/get/:id", async ({ params: { id }}, res, next) => {
     try{
         const found = await Booking.findById(id);
