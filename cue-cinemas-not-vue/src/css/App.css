@@ -122,7 +122,8 @@ text-transform: none;
 text-align: left;
 }
 
-.card-aboutUs {
+
+.card-aboutUs{
   margin: 0 auto;
   float: none;
   margin-bottom: 2.5%;
@@ -184,7 +185,6 @@ text-align: left;
   background-color: #1f2041;
 }
 
-
 .rows {
   background-color: #1f2041;
   padding: 2.5% 2.5% 2.5%;
@@ -196,7 +196,7 @@ text-align: left;
   max-height: 100%;
 }
 
-.placesToGoHeader {
+.placesToGoHeader{
   background-color: linen;
   border: 2px white;
 }
@@ -207,7 +207,6 @@ text-align: left;
 }
 
 .places-card-body {
-  
 
 
 }

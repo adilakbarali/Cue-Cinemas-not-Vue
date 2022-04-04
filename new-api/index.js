@@ -10,6 +10,7 @@ app.use(cors());
 const movieRoutes = require("./routes/movieRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const screenRoutes = require("./routes/screenRoutes");
+const discussionRoutes = require("./routes/discussionRoutes");
 
 app.use((req, res, next) => {
   // eslint-disable-next-line no-console
@@ -26,6 +27,8 @@ app.use("/movie", movieRoutes);
 app.use("/booking", bookingRoutes);
 
 app.use("/screen", screenRoutes);
+
+app.use("/discussion", discussionRoutes);
 
 app.use("*", (req, res, next) => next({ status: 404, message: "Invalid URL" }));
 
