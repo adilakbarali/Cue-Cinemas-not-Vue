@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 
@@ -10,6 +10,7 @@ const BookingForm = (sID) => {
     const post_adults = useRef(null);
     const post_children = useRef(null);
     var post_concessions = [];
+    const [bookingId, setBookingId] = useState();
 
     const appendConcession = (event) => {
         var e = event.target;
@@ -36,12 +37,20 @@ const BookingForm = (sID) => {
             "number_of_children" : parseInt(post_children.current.value),
             "concessions" : post_concessions
         }
-        console.log(booking);
         axios.post('http://localhost:4494/booking/create', booking)
         .then((response) => {
-            console.log(response);
+            if(response.data.status === 201){
+                getLatest();
+            }
         })
     };
+
+    const getLatest = () => {
+        axios.get('http://localhost:4494/booking/getLatest')
+        .then((response) => {
+            setBookingId(response.data._id);
+        })
+    }
 
     return ( 
         <>

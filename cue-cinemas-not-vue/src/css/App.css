@@ -122,13 +122,12 @@ text-transform: none;
 text-align: left;
 }
 
+
 .card-aboutUs {
+
   margin: 0 auto;
-  /* Added */
   float: none;
-  /* Added */
   margin-bottom: 2.5%;
-  /* Added */
   background-color: #957fef !important;
 }
 
@@ -185,6 +184,7 @@ text-align: left;
 
 .movieDescriptionBackground{
   background-color: #1f2041;
+
 }
 
 
@@ -199,7 +199,7 @@ text-align: left;
   max-height: 100%;
 }
 
-.placesToGoHeader {
+.placesToGoHeader{
   background-color: linen;
   border: 2px white;
 }
@@ -207,4 +207,28 @@ text-align: left;
 .placesCardTitle {
   background-color: white;
   border: 2px white;
+
 }
+
+.places-card-body {
+
+}
+
+.classificationImage{
+  max-width: 40%;
+  height: auto;
+  max-height: 40%
+}
+
+.idImage{
+  max-width: 30%;
+  height: auto;
+  max-height: 30%
+}
+
+.center {
+  margin:auto;
+  width:50%;
+  padding: 10px
+}
+
