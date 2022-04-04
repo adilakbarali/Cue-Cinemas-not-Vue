@@ -187,6 +187,7 @@ text-align: left;
 
 }
 
+
 .rows {
   background-color: #1f2041;
   padding: 2.5% 2.5% 2.5%;
@@ -206,6 +207,7 @@ text-align: left;
 .placesCardTitle {
   background-color: white;
   border: 2px white;
+
 }
 
 .places-card-body {
@@ -229,3 +231,4 @@ text-align: left;
   width:50%;
   padding: 10px
 }
+
