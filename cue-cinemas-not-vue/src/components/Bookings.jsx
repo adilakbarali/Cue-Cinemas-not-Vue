@@ -14,7 +14,7 @@ const Bookings = (sID) => {
     
     const findMovie = useRef(null);
     const [outputMovie, setOutputMovie] = useState({});
-    const [screen, setScreen] = useState();
+    const [screen, setScreen] = useState("");
 
     var tempScreens = [];
 
@@ -35,6 +35,7 @@ const Bookings = (sID) => {
     const getScreens = () => {
             axios.get(`http://localhost:4494/screen/find?movie_id=${findMovie.current.value}`) // Sending a get request to the server
               .then((response) => { 
+                setScreen("");
                 tempScreens = response.data;
                 tempScreens.sort(function(a, b){
                     return new Date(b.release_date) - new Date(a.release_date)
@@ -69,7 +70,7 @@ const Bookings = (sID) => {
             screenData.map((screen, key) => {
                 return <Button variant="primary" onClick={(e) => setScreen(screen._id)}>{screen.date_time}</Button>;       
             },)}
-            {screen &&
+            {screen !== "" &&
                 <BookingForm sID={screen}/>
             }
         </>
