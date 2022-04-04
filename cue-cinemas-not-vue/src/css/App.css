@@ -123,7 +123,8 @@ text-align: left;
 }
 
 
-.card-aboutUs{
+.card-aboutUs {
+
   margin: 0 auto;
   float: none;
   margin-bottom: 2.5%;
@@ -183,6 +184,7 @@ text-align: left;
 
 .movieDescriptionBackground{
   background-color: #1f2041;
+
 }
 
 .rows {
@@ -208,5 +210,22 @@ text-align: left;
 
 .places-card-body {
 
+}
 
+.classificationImage{
+  max-width: 40%;
+  height: auto;
+  max-height: 40%
+}
+
+.idImage{
+  max-width: 30%;
+  height: auto;
+  max-height: 30%
+}
+
+.center {
+  margin:auto;
+  width:50%;
+  padding: 10px
 }

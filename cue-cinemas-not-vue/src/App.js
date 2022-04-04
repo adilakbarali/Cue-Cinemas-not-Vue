@@ -17,6 +17,8 @@ import FindUs from './components/FindUs';
 import PlacesToGoPage from './components/PlacesToGoPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Classification from './components/Classification';
+
 
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      {/* <Classification/> */}
     </>
 
   );
