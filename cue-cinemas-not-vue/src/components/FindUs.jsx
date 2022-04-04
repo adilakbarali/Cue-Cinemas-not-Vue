@@ -6,17 +6,23 @@ const FindUs = () => {
   return (
     <>
       <br />
-      <h1> How to Find Us </h1>
+      <div className="placesToGoHeader">
+        <h1> How to Find Us </h1>
+      </div>
       <br />
       <FindUsCard />
       <br />
       <br />
-      <h3> Directions and Transport Links: </h3>
+      <div className="placesToGoHeader">
+        <h1> Directions and Transport Links: </h1>
+      </div>
       <br />
       <DirectionsCard />
       <br />
       <br/>
-      <h3> Google Map: </h3>
+      <div className="placesToGoHeader">
+        <h1> Google Map: </h1>
+      </div>
       <MapCard />
     </>
   );

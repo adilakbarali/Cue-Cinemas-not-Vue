@@ -17,12 +17,12 @@ const MapCard = ({ cityData }) => {
 
   const mapStyles = {
     overflow: "hidden",
-    width: "100%",
-    height: "100vh",
+    width: "50%",
+    height: "50vh"
   };
 
   const mapParams = {
-    center: [55.873446320605176, -4.133155157915969], // Scotland
+    center: [55.873446320605176, -4.133155157915969], // Vue Glasgow Fort
     zoom: 17,
     zoomControl: false,
     maxBounds: L.latLngBounds(L.latLng(-150, -240), L.latLng(150, 240)),
@@ -65,7 +65,7 @@ const MapCard = ({ cityData }) => {
 
   return (
     <div>
-      <div id="map" style={mapStyles} />
+      <div id="map" style={mapStyles} className="center"/>
     </div>
   );
 };
