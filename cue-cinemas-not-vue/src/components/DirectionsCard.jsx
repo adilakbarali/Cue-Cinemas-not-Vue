@@ -1,27 +1,10 @@
-import { CardGroup, Card, CardImg } from "react-bootstrap";
+import { CardGroup, Card, CardImg, Row, Col, Container } from "react-bootstrap";
 
 const DirectionsCard = () => {
   return (
     <>
-
+    
       <CardGroup>
-        {/* <Card> */}
-          {/* <Card.Header>
-            <Nav variant="tabs" defaultActiveKey="#car">
-              <Nav.Item>
-                <Nav.Link href="#car"> By Car </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#bus"> By Bus </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#train"> By Train </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#Teleportation"> By Teleportation </Nav.Link>
-              </Nav.Item>
-            </Nav> */}
-          {/* </Card.Header> */}
           <Card>
             <Card.Body>
               <Card.Title> By Car: </Card.Title>
@@ -84,8 +67,8 @@ const DirectionsCard = () => {
               />
             </Card.Body>
           </Card>
+          </CardGroup>
         {/* </Card> */}
-      </CardGroup>
     </>
   );
 };

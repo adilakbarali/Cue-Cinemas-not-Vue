@@ -24,6 +24,7 @@ const FindUs = () => {
         <h1> Google Map: </h1>
       </div>
       <MapCard />
+
     </>
   );
 };

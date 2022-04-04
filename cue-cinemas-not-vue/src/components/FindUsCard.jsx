@@ -1,4 +1,4 @@
-import { Card, CardGroup, CardImg } from "react-bootstrap";
+import { Card, CardGroup, CardImg, Row, Col, Container } from "react-bootstrap";
 
 const FindUsCard = () => {
   return (
@@ -8,7 +8,7 @@ const FindUsCard = () => {
           <Card.Body>
             <Card.Title> Address: </Card.Title>
             <Card.Text>60 Provan Walk, Glasgow Fort, Glasgow, G34 9DL</Card.Text>
-            <CardImg
+            <CardImg 
               variant="bottom"
               src="https://th.bing.com/th/id/R.7d63de4db90b791a09e2e62fefd39514?rik=cxsrttKLknZz8w&riu=http%3a%2f%2fphotos.cinematreasures.org%2fproduction%2fphotos%2f213486%2f1499671381%2flarge.JPG%3f1499671381&ehk=vbLm%2bdgcEY86e7FnxE13hja%2flln3q%2fjqCHD0ZghwBhA%3d&risl=&pid=ImgRaw&r=0"
               style={{ height: "481px" }}
