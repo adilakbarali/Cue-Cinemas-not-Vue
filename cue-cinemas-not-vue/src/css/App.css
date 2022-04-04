@@ -120,7 +120,8 @@ font-style: normal;
 font-variant: normal;
 text-transform: none;
 text-align: left;
-=======
+}
+
 .card-aboutUs {
   margin: 0 auto;
   /* Added */
@@ -184,7 +185,7 @@ text-align: left;
 
 .movieDescriptionBackground{
   background-color: #1f2041;
-
+}
 
 
 .rows {
@@ -196,6 +197,7 @@ text-align: left;
   max-width: 100%;
   height: auto;
   max-height: 100%;
+}
 
 .placesToGoHeader {
   background-color: linen;
@@ -212,3 +214,44 @@ text-align: left;
 
 
 }
+
+/* Everything below this is styling for the contact form */
+
+.formDiv {    
+  padding: 21px;    
+   border-radius: 5px;    
+   background-color: #f2f2f2;    
+  }    
+      
+  input[type=text], select     
+  {    
+    width: 100%;    
+    padding: 12px 20px;    
+    margin: 8px 0;    
+    display: inline-block;    
+    border: 1px solid #ccc;    
+    border-radius: 4px;    
+    box-sizing: border-box;    
+  }    
+      
+  input[type=submit] {    
+    width: 100%;    
+    background-color: #4CAF50;    
+    color: white;    
+    padding: 14px 20px;    
+    margin: 8px 0;    
+    border: none;    
+    border-radius: 4px;    
+    cursor: pointer;    
+  }    
+      
+  input[type=submit]:hover {    
+    background-color: #45a049;    
+  }    
+  .showError{    
+    border-color: #a94442 !important;    
+    color: #a94442 !important;    
+    margin-bottom: 15px;    
+  }
+
+  /* Everything above this is styling for the contact form */
