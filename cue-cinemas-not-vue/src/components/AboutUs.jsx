@@ -5,9 +5,6 @@ const AboutUs = () => {
 
         <>
 
-            <h2>
-                About CueNotVueCinemas
-            </h2>
 
             <Container style={{ maxWidth: "100%", maxHeight: "85%", height: "85%" }}>
                 <Row className='rows'>

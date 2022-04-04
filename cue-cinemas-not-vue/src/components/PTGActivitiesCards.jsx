@@ -6,12 +6,12 @@ const PTGActivitiesCards = () => {
         <div className="placesCardTitle">
         <h2>Fun Fun Fun!</h2>
         </div>
-        <CardGroup>
+        <CardGroup className="PlacesToGo" style={{width: '80rem'}}>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.2WixiK1_vaVG5EoSVkGXmwHaEU?w=284&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body className="places-card-body">
-            <Card.Title>Gutterly Awful</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">Gutterly Awful</Card.Title>
+            <Card.Text className="card-aboutUs-body">
               Who doesn't love bowling?
               <br />
               Get yourself down to Glasgows infamous bowling lanes with your friends and family and have a blast!
@@ -29,8 +29,8 @@ const PTGActivitiesCards = () => {
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.sTyipkFf4OBunJNVQ1A8MgHaEc?w=306&h=183&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body className="places-card-body">
-            <Card.Title>Area 51</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">Area 51</Card.Title>
+            <Card.Text className="card-aboutUs-body">
                 Delve into the mysteries of this aien-themed arcade while you have a whale of a time.
                 <br />
             Great for kids aged from 5 - 16 and there is something for everyone.
@@ -52,8 +52,8 @@ const PTGActivitiesCards = () => {
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.XoKFIcnGaSJ34Jtsen8-owHaFU?w=228&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "301px"}} />
           <Card.Body className="places-card-body">
-            <Card.Title>BottomNotTop Golf</Card.Title>
-            <Card.Text>
+            <Card.Title className="moviesTitle">BottomNotTop Golf</Card.Title>
+            <Card.Text className="card-aboutUs-body">
               Did you know we don't just do cinemas???
               <br />
               Have a swing at our brand new, state of the art driving range great for fun with family and friends!

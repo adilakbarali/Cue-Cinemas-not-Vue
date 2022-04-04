@@ -6,7 +6,7 @@ const ContactUsPage = () => {
     return ( 
         <>
         <ContactEmailForm/>
-        <Footer/>
+        
         </>
      );
 }

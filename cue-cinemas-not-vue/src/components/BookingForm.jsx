@@ -45,14 +45,14 @@ const BookingForm = (sID) => {
 
     return ( 
         <>
-        <Card className="bg-dark text-white" style={{width:'20rem'}}>
+        <Card className="bg-dark text-white" style={{width:'40rem'}}>
             <Form>
                 <Form.Group className="mb-3" controlId="formFullName">
-                    <Form.Label>Full Name</Form.Label>
+                    <Form.Label> Full Name </Form.Label>
                     <Form.Control type="text" placeholder="Enter full name" ref={post_name}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfSeats">
-                    <Form.Label>Number Of Seats</Form.Label>
+                    <Form.Label> Number Of Seats </Form.Label>
                     <Form.Select type="select" ref={post_seats}>
                     <option>1</option>
                     <option>2</option>
@@ -65,7 +65,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfAdults">
-                    <Form.Label>Number Of Adults</Form.Label>
+                    <Form.Label> Number Of Adults </Form.Label>
                     <Form.Select type="select" ref={post_adults}>
                     <option>1</option>
                     <option>2</option>
@@ -78,7 +78,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfChildren">
-                    <Form.Label>Number Of Children</Form.Label>
+                    <Form.Label> Number Of Children </Form.Label>
                     <Form.Select type="select" ref={post_children}>
                     <option>0</option>
                     <option>1</option>
@@ -92,7 +92,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formConcessions">
-                    <Form.Label>Concessions</Form.Label>
+                    <Form.Label> Concessions </Form.Label>
                     <Form.Check type="checkbox" label="Salted Popcorn (Small)" value="Salted Popcorn (Small)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Salted Popcorn (Large)" value="Salted Popcorn (Large)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Sweet Popcorn (Small)" value="Sweet Popcorn (Small)" onChange={appendConcession}/>
@@ -105,6 +105,7 @@ const BookingForm = (sID) => {
                     <Form.Check type="checkbox" label="Soft Drink (Medium)" value="Soft Drink (Medium)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Soft Drink (Large)" value="Soft Drink (Large)" onChange={appendConcession}/>
                 </Form.Group>
+                
                 <Button variant="primary" type="button" onClick={sendData}>
                     Book!
                 </Button>
