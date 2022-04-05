@@ -1,5 +1,5 @@
 // imports
-
+const lineReader = require('line-reader')
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col, Button, Form } from "react-bootstrap";
@@ -13,10 +13,7 @@ const Forum = () => {
 
     const [movieData, setMovieData] = useState([])
 
-    const [newComment, setNewComment] = useState({})
-
     const ratingList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 
     let commentObj = {
         "full_name": "",
@@ -33,6 +30,18 @@ const Forum = () => {
     // How do we deal with data when there is an error?
     const [error, setError] = useState(null); // at run time there is no error
 
+    const moderateContent = (text) => {
+
+        let vulgarity = 0
+
+        while (vulgarity < 1) {
+            lineReader.eachLine("../resources/blackList.txt", (line) => {
+                
+            })
+        }
+
+    }
+    
     const createNewComment = () => {
 
         axios.post(`http://localhost:4494/discussion/create`, commentObj)
@@ -109,13 +118,14 @@ const Forum = () => {
                     <Container className="ContainerClass">
                         <Row>
                             <Col>
-                                <Card className="forumCard" style={{ width: '40rem' }}>
+                                <Card className="discussionCards" style={{ width: '40rem' }}>
                                     <Card.Body>
                                         <Form>
                                             <Form.Group>
                                                 <Form.Control type="text" placeholder="Enter your name" onChange={(e) => commentObj.full_name = e.target.value} />
-                                                <Form.Control type="email" placeholder="Enter your email" onChange={(e) => commentObj.email = e.target.value} />
+                                                <Form.Control type="email" placeholder="  Enter your email" onChange={(e) => commentObj.email = e.target.value} />
                                             </Form.Group>
+                                            <br />
                                             <Form.Group>
                                                 <Form.Select type="select" onChange={(e) => commentObj.movie_id = e.target.value}>
                                                     <option>Please select a movie</option>
@@ -123,13 +133,15 @@ const Forum = () => {
                                                         return <option value={movie._id}>{movie.title}</option>;
                                                     })}
                                                 </Form.Select>
+                                                <br />
                                                 <Form.Select type="select" onChange={(e) => commentObj.rating = e.target.value}>
-                                                    <option>Rate the movie out of 10</option>
+                                                    <option value={null}>Rate the movie out of 10</option>
                                                     {ratingList.map((number, key) => {
                                                         return <option value={number}>{number}</option>
                                                     })}
                                                 </Form.Select>
                                             </Form.Group>
+                                            <br />
                                             <Form.Group>
                                                 <Form.Control type="text" placeholder="Write your comment here" onChange={(e) => commentObj.message = e.target.value} />
                                             </Form.Group>
@@ -147,7 +159,7 @@ const Forum = () => {
                     </Container>
                 </div>
 
-                <br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
 
                 <div>
                     {
