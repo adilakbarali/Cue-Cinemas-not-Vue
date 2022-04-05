@@ -54,6 +54,7 @@ const BookingForm = (sID) => {
 
     return ( 
         <>
+        <br></br>
         <Card className="bg-dark text-white" style={{width:'40rem'}}>
             <Form>
                 <Form.Group className="mb-3" controlId="formFullName">

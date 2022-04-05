@@ -57,6 +57,7 @@ const Bookings = (sID) => {
 
     return ( 
         <>
+        
             Movie:
             <Form.Select type="select" ref={findMovie} onChange={getScreens}>
                 <option>Please select a movie</option>
