@@ -59,17 +59,19 @@ const Bookings = (sID) => {
         <>
         
             Movie:
-            <Form.Select type="select" ref={findMovie} onChange={getScreens}>
+            <Form.Select className="formBookings" type="select" ref={findMovie} onChange={getScreens} style={{width:"20rem"}}>
                 <option>Please select a movie</option>
+                
                 {movieData.map((movie, key) => {
                     return <option value={movie._id}>{movie.title}</option>;       
                 },)}
             </Form.Select>
+            <br></br><br></br>
             {loadedScreens &&
             <Movies data={outputMovie}/>}
             {loadedScreens &&
             screenData.map((screen, key) => {
-                return <Button variant="primary" onClick={(e) => setScreen(screen._id)}>{screen.date_time}</Button>;       
+                return <Button variant="primary" onClick={(e) => setScreen(screen._id)}>{screen.date_time}</Button>;    
             },)}
             {screen !== "" &&
                 <BookingForm sID={screen}/>

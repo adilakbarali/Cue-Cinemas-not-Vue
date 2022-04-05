@@ -11,6 +11,7 @@ import ContactEmailForm from './components/ContactEmailForm';
 import Footer from './components/Footer';
 import ContactUsPage from './components/ContactUsPage';
 import BookingForm from './components/BookingForm';
+import Bookings from './components/Bookings';
 import UpcomingReleases from './components/UpcomingReleases';
 import OpeningTimesPage from './components/OpeningTimesPage'
 import FindUs from './components/FindUs';
@@ -33,7 +34,7 @@ function App() {
           <Route path="/ContactUs" element={<ContactUsPage />}></Route>
           <Route path="/NewReleases" element={<NewReleases />}></Route>
           <Route path="/UpcomingReleases" element={<UpcomingReleases />}></Route>
-          <Route path="/Bookings" element={<BookingForm />}></Route>
+          <Route path="/Bookings" element={<Bookings />}></Route>
           <Route path="/FindUs" element={<FindUs />}></Route>
           <Route path="/PlacesToGo" element={<PlacesToGoPage />}></Route>
           <Route path="/OpeningTimes" element={<OpeningTimesPage />}></Route>

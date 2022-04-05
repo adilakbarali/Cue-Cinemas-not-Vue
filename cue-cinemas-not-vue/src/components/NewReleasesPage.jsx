@@ -40,10 +40,9 @@ const NewReleasesPage = () => {
     return <p> We are loading the great films we have to offer!</p>
 } else {
     return (
-      <>        <div>
-          <p> Films showing </p>
-        
-        <p> Upcoming Movies </p>
+      <>   
+      <div>
+          <p className="movies"> Films showing </p>
 
 
         {movieData.map((movie, key) => {

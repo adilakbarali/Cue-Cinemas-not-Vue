@@ -112,6 +112,21 @@ h5 {
   ;
 }
 
+.movies{
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 42px;
+  letter-spacing: 0.8px;
+  word-spacing: 0px;
+  color: #FFFFFF;
+  font-weight: normal;
+  text-decoration: rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .moviesCast {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -347,6 +362,10 @@ input[type=submit]:hover {
   margin-bottom: 15px;
 }
 
+.d-block{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .bg-dark {
   background-color: #1F2041;
@@ -365,6 +384,10 @@ input[type=submit]:hover {
 
 
 .bg-dark {
+  margin-left: auto;
+  margin-right: auto;
+}
+.formBookings {
   margin-left: auto;
   margin-right: auto;
 }
@@ -420,3 +443,9 @@ input[type=submit]:hover {
   height:10%;
 }
 
+.carouselCaption{
+  background-color: #957FEF;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23B79CED' stroke-width='7.6' stroke-opacity='0.14' %3E%3Ccircle fill='%23957FEF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%238973eb' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%237d67e7' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23715ce3' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%236551de' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%235946d8' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%234e3cd3' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%234233cc' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%233f32bd' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%233b32ad' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%2338319e' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23342f90' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23312e82' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%232d2c74' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%232a2967' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%2326265a' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%2323234d' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%231F2041' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}

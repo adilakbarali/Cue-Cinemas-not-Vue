@@ -38,7 +38,7 @@ const Movies = ({ data }) => {
                             </Card.Body>
                             <Card.Body>
                                 <p>
-                                    <Button variant="primary">Book now</Button> --
+                                    <Button variant="primary">Book now</Button> {''}
                                     <Button variant="primary">Reviews</Button>
                                 </p>
                             </Card.Body>
