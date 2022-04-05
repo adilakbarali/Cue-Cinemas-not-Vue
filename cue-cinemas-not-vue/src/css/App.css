@@ -357,3 +357,8 @@ background-size: cover;
   margin-right: auto;
 }
 
+.cse .gsc-control-cse,
+    .gsc-control-cse {
+      background-color:transparent !important;
+      border: none !important;
+    }

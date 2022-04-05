@@ -7,8 +7,19 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import logo from '../resources/logo.png'
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import { useEffect } from 'react';
 
 const NavBar = () => {
+    
+useEffect(() => {
+  const timer = setTimeout(() => {
+    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Term")
+    console.log("Testing")
+  }, 100);
+  return () => clearTimeout(timer);
+}, [])
+
+
   return (
     <>
       <Navbar bg="blue" expand="lg">
@@ -62,7 +73,7 @@ const NavBar = () => {
                 
               </NavDropdown>
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <FormControl
                 type="search"
                 placeholder="Search"
@@ -70,7 +81,8 @@ const NavBar = () => {
                 aria-label="Search"
               />
               <Button variant="outline-success">Search</Button>
-            </Form>
+            </Form> */}
+            <div class="gcse-search"></div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
