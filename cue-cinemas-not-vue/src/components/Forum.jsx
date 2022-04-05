@@ -1,9 +1,9 @@
-// imports
-const lineReader = require('line-reader')
+// import * as lineReader from 'line-reader'
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col, Button, Form } from "react-bootstrap";
 import ForumComments from "./ForumComments";
+
 
 const Forum = () => {
 
@@ -30,21 +30,30 @@ const Forum = () => {
     // How do we deal with data when there is an error?
     const [error, setError] = useState(null); // at run time there is no error
 
-    const moderateContent = (text) => {
+    // const moderateContent = (text) => {
 
-        let vulgarity = 0
+    //     let vulgarity = 0
 
-        while (vulgarity < 1) {
-            lineReader.eachLine("../resources/blackList.txt", (line) => {
-                
-            })
-        }
+    //     while (vulgarity < 1) {
+    //         lineReader.eachLine("../resources/blackList.txt", (line) => {
+    //             if (text.search(line(0, line.indexOf("  "))) == -1) {
+    //                 vulgarity += 1
+    //             }
+    //         })
+    //     }
 
-    }
-    
+    //     if (vulgarity == 0) {
+    //         return true
+    //     }
+    //     else {
+    //         return false
+    //     }
+    // }
+
     const createNewComment = () => {
 
-        axios.post(`http://localhost:4494/discussion/create`, commentObj)
+        // if (moderateContent(commentObj.message) == true) {
+            axios.post(`http://localhost:4494/discussion/create`, commentObj)
             .then((response) => {
 
                 console.log(response)
@@ -55,6 +64,11 @@ const Forum = () => {
                 console.log(error)
 
             })
+        // }
+        // else {
+        //     alert("Certain words and phrases are not permissable")
+        // }
+        
 
     }
 
