@@ -3,7 +3,9 @@ import { Card, CardGroup } from 'react-bootstrap'
 const DirectorsScreen = () => {
     return ( 
         <>
+        <div className='screens-title'>
       <h2>Directors box</h2>
+      </div>
         <CardGroup className='screens'>
         <Card>
           <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.Y90iXusDDRmBDBEJrxdkWQHaEb?w=289&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "250px"}}/>
