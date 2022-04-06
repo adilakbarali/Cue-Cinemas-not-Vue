@@ -11,29 +11,29 @@ const Movie = require("../models/movie")
 describe("Test Movie", () => {
   let testMovie;
 
-  beforeEach((done) => {
-    Movie.deleteMany((err) => {
-      if(!err){
-        Movie.create(
-          {
-            title: "The Batman",
-            release_date: "2022-03-04T23:00:00.000Z",
-            actors: [ 'Robert Pattison', 'Zoe Kravitz' ],
-            director: "Matt Reeves",
-            description: "A movie based on Batman's second year of fighting crime and follows him as he explores Gotham City's corruption and faces the Riddler, a riddle-obsessed serial killer.",
-            rating: 8.5,
-            images: ["https://i.imgur.com/DxlKIo3.jpg","https://i.imgur.com/HqPtjae.jpg"],
-          },
-          (error, created) => {
-            if(!error){
-              testMovie = created;
-            }
-            return done();
-          },
-        );
-      }
-    });
-  });
+//   beforeEach((done) => {
+//     Movie.deleteMany((err) => {
+//       if(!err){
+//         Movie.create(
+//           {
+//             title: "The Batman",
+//             release_date: "2022-03-04T23:00:00.000Z",
+//             actors: [ 'Robert Pattison', 'Zoe Kravitz' ],
+//             director: "Matt Reeves",
+//             description: "A movie based on Batman's second year of fighting crime and follows him as he explores Gotham City's corruption and faces the Riddler, a riddle-obsessed serial killer.",
+//             rating: 8.5,
+//             images: ["https://i.imgur.com/DxlKIo3.jpg","https://i.imgur.com/HqPtjae.jpg"],
+//           },
+//           (error, created) => {
+//             if(!error){
+//               testMovie = created;
+//             }
+//             return done();
+//           },
+//         );
+//       }
+//     });
+//   });
 
   it("Should find ALL movie information", (done) => {
     chai
