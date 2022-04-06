@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Forum from './components/Forum';
 
 import Classification from './components/Classification';
-import Payments from './components/Payments';
+import ScreensPage from './components/ScreensPage';
 
 
 
@@ -40,12 +40,12 @@ function App() {
           <Route path="/FindUs" element={<FindUs />}></Route>
           <Route path="/PlacesToGo" element={<PlacesToGoPage />}></Route>
           <Route path="/Forum" element={<Forum />}></Route>
-          <Route path="/Payment" element={<Payments />}></Route>
+          <Route path='/ScreensPage' element={<ScreensPage />}></Route>
 
         </Routes>
         <Footer />
       </Router>
-      {/* <Classification/> */}
+    
     </>
 
   );

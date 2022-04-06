@@ -24,7 +24,7 @@ class ContactForm extends Component {
             formErrors["nameErr"] = "Name is required.";    
         }    
         
-        if (email) {    
+        if (!email) {    
             formIsValid = false;    
             formErrors["emailErr"] = "Email is required.";    
         }    
@@ -93,7 +93,9 @@ class ContactForm extends Component {
                         </div>    
                         <div>    
                             <label htmlFor="text">Message</label>    
-                            <input type="text" name="message" rows={5}  
+                            <br />
+                            <br />
+                            <textarea type="text" name="message" rows={5} cols={160}
                                 value={this.state.message}    
                                 onChange={this.handleChange}    
                                 placeholder="Please enter your message.."    
