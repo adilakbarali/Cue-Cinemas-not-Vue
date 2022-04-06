@@ -64,6 +64,7 @@ const BookingForm = (sID) => {
 
     return ( 
         <>
+        <br></br>
         <Card className="bg-dark text-white" style={{width:'40rem'}}>
             {bookSuccess &&
             <Alert variant="success">Booking Successful!

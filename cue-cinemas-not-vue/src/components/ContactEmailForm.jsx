@@ -62,13 +62,15 @@ class ContactForm extends Component {
     
         const { nameErr, emailErr, messageErr } = this.state.formErrors;    
     
-        return (    
-            <div className="formDiv">    
+        return (  
+            <> 
+            <br></br>
+            <div className="formDiv"> 
                 <h3 style={{ textAlign: "center" }} >Contact Us Form </ h3>    
-                <div>    
+                <div>   
                     <form onSubmit={this.handleSubmit}>    
                         <div>    
-                            <label htmlFor="name">Name</label>    
+                            <label className="opening-table-body" htmlFor="name">Name</label>    
                             <input type="text" name="name"    
                                 value={this.state.name}    
                                 onChange={this.handleChange}    
@@ -80,7 +82,7 @@ class ContactForm extends Component {
     
                         </div>
                         <div>    
-                            <label htmlFor="email">Email</label>    
+                            <label className="opening-table-body" htmlFor="email">Email</label>    
                             <input type="text" name="email"    
                                 value={this.state.email}    
                                 onChange={this.handleChange}    
@@ -92,6 +94,7 @@ class ContactForm extends Component {
     
                         </div>    
                         <div>    
+
                             <label htmlFor="text">Message</label>    
                             <br />
                             <br />
@@ -107,7 +110,8 @@ class ContactForm extends Component {
                         <input type="submit" value="Submit" />    
                     </form>    
                 </div>    
-            </div >    
+            </div >  
+            </>  
         )    
     }    
 }    

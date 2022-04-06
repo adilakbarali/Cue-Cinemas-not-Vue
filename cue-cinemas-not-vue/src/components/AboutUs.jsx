@@ -9,14 +9,13 @@ const AboutUs = () => {
             <Container style={{ maxWidth: "100%", maxHeight: "85%", height: "85%" }}>
                 <Row className='rows'>
                     <Col>
-                        <img className='img' src="https://www.boredpanda.com/blog/wp-content/uploads/2015/08/epic-movie-scenes-screenshots-80__880.jpg"
+                        <img className='img' src="https://cdn.mos.cms.futurecdn.net/UNEfTXYJrE7Hrtadt7aEda-1200-80.jpg"
                             alt="OUATIH" />
                     </Col>
                     <Col>
                         <Card className='card-aboutUs'>
                             <Card.Header className='card-aboutUs-header'>Meet our team</Card.Header>
                             <Card.Body className='card-aboutUs-body'>
-                                <Card.Title></Card.Title>
                                 <Card.Text>
                                     Product Owner: Adil Akbarali
                                 </Card.Text>

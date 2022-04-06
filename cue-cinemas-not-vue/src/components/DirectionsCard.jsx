@@ -11,27 +11,27 @@ const DirectionsCard = () => {
         {Array.from({ length: 1 }).map((_, idx) => (
           <>
             <Col>
-              <Card>
+              <Card className="bg-dark">
                 <Card.Body>
-                  <Card.Title> By Car: </Card.Title>
-                  <Card.Text>
+                  <Card.Title className="opening-table-head"> By Car: </Card.Title>
+                  <Card.Text className="moviesDescription">
                     Vue is located within Glasgow Fort which is off of Junction
                     10 of the M8. Glasgow Fort is 5 miles East of Glasgow City
                     Centre or 35 miles West of Edinburgh.
                   </Card.Text>
                   <CardImg
                     variant="bottom"
-                    src="http://sparkviews.com/wp-content/uploads/2018/02/Cars-2006.jpg"
+                    src="https://image.smythstoys.com/original/desktop/189221.jpg"
                     style={{ height: "370px" }}
                   />
                 </Card.Body>
               </Card>
             </Col>
             <Col>
-              <Card>
+              <Card className="bg-dark">
                 <Card.Body>
-                  <Card.Title> By Bus: </Card.Title>
-                  <Card.Text>
+                  <Card.Title className="opening-table-head"> By Bus: </Card.Title>
+                  <Card.Text className="moviesDescription">
                     There are bus stops outside and in the middle of the
                     shopping park. There are many regular bus services that run
                     from Glasgow City Centre including First bus services: 19,
@@ -46,10 +46,10 @@ const DirectionsCard = () => {
               </Card>
             </Col>
             <Col>
-              <Card>
+              <Card className="bg-dark">
                 <Card.Body>
-                  <Card.Title> By Train: </Card.Title>
-                  <Card.Text>
+                  <Card.Title className="opening-table-head"> By Train: </Card.Title>
+                  <Card.Text className="moviesDescription">
                     The nearest train station to Easterhouse train station which
                     is a 41 minute walk or 30 minute bus ride. Bus services that
                     run from Easterhouse train station are McGill’s: 310 (every
@@ -67,10 +67,10 @@ const DirectionsCard = () => {
               </Card>
             </Col>
             <Col>
-              <Card>
+              <Card className="bg-dark">
                 <Card.Body>
-                  <Card.Title> By Teleportation: </Card.Title>
-                  <Card.Text>
+                  <Card.Title className="opening-table-head"> By Teleportation: </Card.Title>
+                  <Card.Text className="moviesDescription">
                     Current work in progress. Please check back in 2050 for
                     updates.
                   </Card.Text>

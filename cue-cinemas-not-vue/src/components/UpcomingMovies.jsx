@@ -35,7 +35,7 @@ const UpcomingMovies = ({ data }) => {
                                 <Card.Text className="moviesDescription">{data.description}</Card.Text>
                             </Card.Body>
                             <Card.Body className="moviesCast">
-                                Release date: {data.release_date}
+                                Release date: {new Date(data.release_date).toLocaleString('en-US')}
                             </Card.Body>
                         </Card>
                     </Col>
