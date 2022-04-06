@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useRef, useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const BookingForm = (sID) => {
     
@@ -10,7 +11,9 @@ const BookingForm = (sID) => {
     const post_adults = useRef(null);
     const post_children = useRef(null);
     var post_concessions = [];
-    const [bookingId, setBookingId] = useState();
+    const [bookingId, setBookingId] = useState("");
+    const [bookFail, setBookFail] = useState(false);
+    const [bookSuccess, setBookSuccess] = useState(false);
 
     const appendConcession = (event) => {
         var e = event.target;
@@ -39,8 +42,12 @@ const BookingForm = (sID) => {
         }
         axios.post('http://localhost:4494/booking/create', booking)
         .then((response) => {
-            if(response.data.status === 201){
+            console.log(response);
+            if(response.status === 201){
                 getLatest();
+            }
+            else{
+                setBookFail(true);
             }
         })
     };
@@ -48,13 +55,33 @@ const BookingForm = (sID) => {
     const getLatest = () => {
         axios.get('http://localhost:4494/booking/getLatest')
         .then((response) => {
-            setBookingId(response.data._id);
+            console.log(response.data[0]);
+            setBookingId(response.data[0]._id);
+            console.log(bookingId);
+            setBookSuccess(true);
         })
     }
 
     return ( 
         <>
         <Card className="bg-dark text-white" style={{width:'40rem'}}>
+            {bookSuccess &&
+            <Alert variant="success">Booking Successful!
+                <div className="d-flex justify-content-end">
+                    <Link to="/Payment">
+                    <Button onClick={() => {navigator.clipboard.writeText(bookingId)}} variant="outline-success">
+                     Click me to pay for your booking!
+                    </Button>
+                    </Link>
+                </div>
+            </Alert>
+            }
+            {bookFail &&
+            <Alert variant="danger">
+                <Alert.Heading>Booking Failed.</Alert.Heading>
+                Please try again later.
+            </Alert>
+            }            
             <Form>
                 <Form.Group className="mb-3" controlId="formFullName">
                     <Form.Label> Full Name </Form.Label>
