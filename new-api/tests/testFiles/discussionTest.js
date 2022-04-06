@@ -5,38 +5,38 @@ const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 const { it, describe, beforeEach } = require("mocha");
 
-const server = require("../index");
-const discussion = require("../models/discussion");
+const server = require("../testIndex");
+const Discussion = require("../testModels/testDiscussionModel");
 
 describe("Test Discussion", () => {
     let testDiscussion;
   
-    // beforeEach((done) => {
-    //   discussion.deleteMany((err) => {
-    //     if(!err) {
-    //       discussion.create(
-    //         {
-    //           full_name: "Sing 2",
-    //           email: "person@gmail.com",
-    //           movie_id: "6241c7c37c1cfc0bddbe0d8a",
-    //           rating: 4,
-    //           message: "boring",
-    //         },
-    //         (error, created) => {
-    //           if(!error){
-    //             testDiscussion = created;
-    //           }
-    //           return done();
-    //         }
-    //       )
-    //     }
-    //   })
-    // })
+    beforeEach((done) => {
+      Discussion.deleteMany((err) => {
+        if(!err) {
+          Discussion.create(
+            {
+              full_name: "Sing 2",
+              email: "person@gmail.com",
+              movie_id: "6241c7c37c1cfc0bddbe0d8a",
+              rating: 4,
+              message: "boring",
+            },
+            (error, created) => {
+              if(!error){
+                testDiscussion = created;
+              }
+              return done();
+            }
+          )
+        }
+      })
+    })
   
     it("Should find ALL discussions", (done) => {
       chai
       .request(server)
-      .get("/discussion/getAll/")
+      .get("/testdiscussion/getAll/")
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
@@ -46,7 +46,7 @@ describe("Test Discussion", () => {
     it("Should find information by id", (done) =>{
       chai
       .request(server)
-      .get("/discussion/get/" + testDiscussion.id)
+      .get("/testdiscussion/get/" + testDiscussion.id)
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
@@ -62,7 +62,7 @@ describe("Test Discussion", () => {
     it("Should create discussion info", (done) =>{
       chai
       .request(server)
-      .post("/discussion/create")
+      .post("/testdiscussion/create")
       .send({
         full_name: "The Batman",
         email: "kiera-hegarty@hotmail.com",
