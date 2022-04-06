@@ -15,6 +15,9 @@ const Forum = () => {
 
     const ratingList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+    const bannedWords = ["fuck", "shit", "wanker", "cunt", "bitch", "dick", "nigga", "faggot"]
+
+
     let commentObj = {
         "full_name": "",
         "email": "",
@@ -50,9 +53,37 @@ const Forum = () => {
     //     }
     // }
 
+    const moderateContentTwo = (text) => {
+
+        let vulgarity = 0
+
+        for (let i = 0; i < bannedWords.length; i++) {
+
+            if (text.search(bannedWords[i]) === null) {
+
+                ;
+            }
+            else {
+
+                vulgarity += 1
+            }
+        }
+
+        if (vulgarity > 0) {
+
+            return true
+        }
+        else {
+            
+            return false
+        } 
+    }
+
     const createNewComment = () => {
 
-        // if (moderateContent(commentObj.message) == true) {
+        
+
+        if (moderateContentTwo(commentObj.message) == false) {
             axios.post(`http://localhost:4494/discussion/create`, commentObj)
             .then((response) => {
 
@@ -64,10 +95,10 @@ const Forum = () => {
                 console.log(error)
 
             })
-        // }
-        // else {
-        //     alert("Certain words and phrases are not permissable")
-        // }
+        }
+        else {
+            alert("Certain words and phrases are not permissable")
+        }
         
 
     }
