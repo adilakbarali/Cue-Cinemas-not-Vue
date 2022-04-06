@@ -123,8 +123,8 @@ h5 {
   font-style: normal;
   font-variant: small-caps;
   text-transform: none;
-  margin-left: auto;
-  margin-right: auto;
+ 
+  text-align: center;
 }
 
 .moviesCast {
@@ -434,6 +434,11 @@ input[type=submit]:hover {
   font-variant: small-caps;
   text-transform: none;
   border: 2px white;
+}
+
+.bottom{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .discussionCards {
