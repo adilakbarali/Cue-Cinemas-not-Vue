@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import { Card, Container, Row, Col, Button, Form } from "react-bootstrap";
 import ForumComments from "./ForumComments";
 
+const filter = require('leo-profanity');
+
+
+
 
 const Forum = () => {
 
@@ -15,8 +19,7 @@ const Forum = () => {
 
     const ratingList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    const bannedWords = ["fuck", "shit", "wanker", "cunt", "bitch", "dick", "nigga", "faggot"]
-
+    filter.loadDictionary();
 
     let commentObj = {
         "full_name": "",
@@ -56,37 +59,37 @@ const Forum = () => {
     //     }
     // }
 
-    const moderateContentTwo = (text) => {
+    // const moderateContentTwo = (text) => {
 
-        let vulgarity = 0
+    //     let vulgarity = 0
 
-        for (let i = 0; i < bannedWords.length; i++) {
+    //     for (let i = 0; i < bannedWords.length; i++) {
 
-            if (text.search(bannedWords[i]) === null) {
+    //         if (text.search(bannedWords[i]) === null) {
 
-                ;
-            }
-            else {
+    //             ;
+    //         }
+    //         else {
 
-                vulgarity += 1
-            }
-        }
+    //             vulgarity += 1
+    //         }
+    //     }
 
-        if (vulgarity > 0) {
+    //     if (vulgarity > 0) {
 
-            return true
-        }
-        else {
+    //         return true
+    //     }
+    //     else {
             
-            return false
-        } 
-    }
+    //         return false
+    //     } 
+    // }
 
     const createNewComment = () => {
 
-        
+        commentObj.message = filter.clean(commentObj.message)
 
-        if (moderateContentTwo(commentObj.message) == false) {
+        // if (moderateContentTwo(commentObj.message) == false) {
             axios.post(`http://localhost:4494/discussion/create`, commentObj)
             .then((response) => {
 
@@ -98,10 +101,10 @@ const Forum = () => {
                 console.log(error)
 
             })
-        }
-        else {
-            alert("Certain words and phrases are not permissable")
-        }
+        // }
+        // else {
+        //     alert("Certain words and phrases are not permissable")
+        // }
         
 
     }
@@ -176,14 +179,15 @@ const Forum = () => {
                                             <br />
                                             <Form.Group>
                                                 <Form.Select type="select" onChange={(e) => commentObj.movie_id = e.target.value}>
-                                                    <option>Please select a movie</option>
+                                                    <option>Please select a movie *</option>
                                                     {movieData.map((movie, key) => {
                                                         return <option value={movie._id}>{movie.title}</option>;
                                                     })}
                                                 </Form.Select>
+                                                
                                                 <br />
                                                 <Form.Select type="select" onChange={(e) => commentObj.rating = e.target.value}>
-                                                    <option value={null}>Rate the movie out of 10</option>
+                                                    <option value={null}>Rate the movie out of 10 *</option>
                                                     {ratingList.map((number, key) => {
                                                         return <option value={number}>{number}</option>
                                                     })}
@@ -193,6 +197,7 @@ const Forum = () => {
                                             <Form.Group>
                                                 <Form.Control type="text" placeholder="Write your comment here" onChange={(e) => commentObj.message = e.target.value} />
                                             </Form.Group>
+                                            * Not required <br /> <br />
                                             <Button variant="primary" onClick={createNewComment}>
                                                 Post Comment
                                             </Button>
@@ -207,7 +212,7 @@ const Forum = () => {
                     </Container>
                 </div>
 
-                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <br />
 
                 <div>
                     {
