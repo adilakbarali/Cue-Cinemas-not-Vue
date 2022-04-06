@@ -7,10 +7,25 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import logo from '../resources/logo.png'
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 const NavBar = () => {
+    
+useEffect(() => {
+  const timer = setTimeout(() => {
+    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Term")
+    console.log("Testing")
+  }, 250);
+  return () => clearTimeout(timer);
+}, [])
+
+
   return (
     <>
+    <Helmet>
+    <script async src="https://cse.google.com/cse.js?cx=0b2bafc8da13c0624"></script>
+    </Helmet>
       <Navbar bg="blue" expand="lg">
         <Container fluid>
           <LinkContainer to="/">
@@ -65,7 +80,7 @@ const NavBar = () => {
                 
               </NavDropdown>
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <FormControl
                 type="search"
                 placeholder="Search"
@@ -73,7 +88,8 @@ const NavBar = () => {
                 aria-label="Search"
               />
               <Button variant="outline-success">Search</Button>
-            </Form>
+            </Form> */}
+            <div class="gcse-search"></div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -356,7 +356,11 @@ background-size: cover;
   margin-left: auto;
   margin-right: auto;
 }
-
+.cse .gsc-control-cse,
+    .gsc-control-cse {
+      background-color:transparent !important;
+      border: none !important;
+    }
 .paymentCard{
   margin-left: auto;
   margin-right: auto;
