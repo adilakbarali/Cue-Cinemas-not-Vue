@@ -37,6 +37,9 @@ const NavBar = () => {
                 <NavDropdown.Item href="#action3">Contact Us</NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item href="#action4">Opening Times</NavDropdown.Item>
+                <LinkContainer to="/ScreensPage">
+                <NavDropdown.Item href="#action11">Screens</NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
               <NavDropdown title="Films" id="navbarScrollingDropdown">
                 <LinkContainer to="/NewReleases">
