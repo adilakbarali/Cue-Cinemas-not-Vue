@@ -18,6 +18,8 @@ import FindUs from './components/FindUs';
 import PlacesToGoPage from './components/PlacesToGoPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Forum from './components/Forum';
+import ScreensPage from './components/ScreensPage';
+
 
 
 
@@ -37,14 +39,20 @@ function App() {
           <Route path="/Bookings" element={<Bookings />}></Route>
           <Route path="/FindUs" element={<FindUs />}></Route>
           <Route path="/PlacesToGo" element={<PlacesToGoPage />}></Route>
+
           <Route path="/OpeningTimes" element={<OpeningTimesPage />}></Route>
           <Route path="/Classification" element={<Classification/>}></Route>
           <Route path="/DiscussionForum" element={<Forum/>}></Route>
         
 
+          <Route path="/Forum" element={<Forum />}></Route>
+          <Route path='/ScreensPage' element={<ScreensPage />}></Route>
+
+
         </Routes>
         <Footer />
       </Router>
+
     </>
 
   );

@@ -8,10 +8,26 @@ import Button from 'react-bootstrap/Button'
 import logo from '../resources/logo.png'
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+
 
 const NavBar = () => {
+    
+useEffect(() => {
+  const timer = setTimeout(() => {
+    document.getElementById("gsc-i-id1").setAttribute("placeholder", "Search Term")
+    console.log("Testing")
+  }, 250);
+  return () => clearTimeout(timer);
+}, [])
+
+
   return (
     <>
+    <Helmet>
+    <script async src="https://cse.google.com/cse.js?cx=0b2bafc8da13c0624"></script>
+    </Helmet>
       <Navbar bg="blue" expand="lg">
         <Container fluid>
           <LinkContainer to="/">
@@ -40,6 +56,12 @@ const NavBar = () => {
                 <LinkContainer to="/OpeningTimes">
                   <NavDropdown.Item href="#action4">Opening Times</NavDropdown.Item>
                 </LinkContainer>
+
+             <NavDropdown.Item href="#action4">Opening Times</NavDropdown.Item>
+                <LinkContainer to="/ScreensPage">
+                <NavDropdown.Item href="#action11">Screens</NavDropdown.Item>
+                </LinkContainer>
+
               </NavDropdown>
               <NavDropdown title="Films" id="navbarScrollingDropdown">
                 <LinkContainer to="/NewReleases">
@@ -67,7 +89,7 @@ const NavBar = () => {
                 </LinkContainer>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <FormControl
                 type="search"
                 placeholder="Search"
@@ -75,7 +97,8 @@ const NavBar = () => {
                 aria-label="Search"
               />
               <Button variant="outline-success">Search</Button>
-            </Form>
+            </Form> */}
+            <div class="gcse-search"></div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
