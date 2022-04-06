@@ -14,7 +14,7 @@ const StandardScreen = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.sO4NzDQ7ZkfgADcaLZ8blgHaE8?w=237&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "250px"}}/>
+          <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.WfW-6kMGNDK6D_uF0qIV1AHaE8?w=224&h=180&c=7&r=0&o=5&dpr=2&pid=1.7" style={{height: "250px"}}/>
           <Card.Footer>
             <small className="text-muted">Enjoy our seats with great leg space!</small>
           </Card.Footer>
