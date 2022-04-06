@@ -39,9 +39,12 @@ const Forum = () => {
 
     //     while (vulgarity < 1) {
     //         lineReader.eachLine("../resources/blackList.txt", (line) => {
-    //             if (text.search(line(0, line.indexOf("  "))) == -1) {
-    //                 vulgarity += 1
+    //             if (text.match(line(0, line.indexOf("  "))) === null) {
+    //                 
     //             }
+    //             else {
+    //                 vulgarity += 1
+    //             }             
     //         })
     //     }
 
