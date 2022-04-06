@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 import { PayPalButton } from "react-paypal-button-v2";
 
 const Payments = () => {
@@ -29,23 +29,25 @@ const Payments = () => {
         },[bookingData]);
 
     return (
-        <> 
-        <p>Please Enter your Booking Reference Number (Paste into the box below): </p>
+        <>
+        <Card className="paymentCard" style={{ width: '40rem' }}> 
+        <Card.Text className="paymentText">Please Enter your Booking Reference Number (Paste into the box below):</Card.Text>
         <Form.Control type="text" placeholder="Booking Reference Number" ref={findBooking}/>
         <Button variant="primary" onClick={getBooking}>Find Booking!</Button>
         {bookingData !== "" &&
-        <>
-        <p>Hello {bookingData.fullName}!</p>
-        <p>You have booked a total of {bookingData.number_of_seats} tickets, including {bookingData.number_of_adults} Adults and {bookingData.number_of_children} Children</p>
-        <p>Alongside this, you have ordered {bookingData.concessions.length} items from our concessions.</p>
-        </>
+            <>
+            <Card.Text className="paymentText">Hello {bookingData.full_name}!</Card.Text>
+            <Card.Text className="paymentText">You have booked a total of {bookingData.number_of_seats} tickets, including {bookingData.number_of_adults} Adults and {bookingData.number_of_children} Children</Card.Text>
+            <Card.Text className="paymentText">Alongside this, you have ordered {bookingData.concessions.length} items from our concessions.</Card.Text>
+            </>
         }
-        {totalCost !== "" &&
-        <>
-        <p>The total cost of this booking is: £{totalCost}</p>
-        <PayPalButton amount={totalCost} onSuccess={(details, data) => { alert("Transaction completed by " + details.payer.name.given_name);}}/>
-        </>
-        }    
+            {totalCost !== "" &&
+            <>
+            <Card.Text className="paymentText">The total cost of this booking is: £{totalCost}</Card.Text>
+            <PayPalButton amount={totalCost} options={{clientId: "sb", currency: "GBP"}} onSuccess={(details, data) => { alert("Transaction completed by " + details.payer.name.given_name);}}/>
+            </>
+        }
+        </Card>    
         </>
         
      );
