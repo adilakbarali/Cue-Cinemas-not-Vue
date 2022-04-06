@@ -141,6 +141,10 @@ h5 {
   text-align: left;
 }
 
+.primary{
+  margin-left: 10px;
+}
+
 .moviesDescription {
   font-family: Georgia, serif;
 

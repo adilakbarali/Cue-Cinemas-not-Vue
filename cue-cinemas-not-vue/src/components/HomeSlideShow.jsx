@@ -7,7 +7,7 @@ const HomeSlideShow = () => {
     return (
         <>
             <Carousel className="p-0">
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-10 h-10"
                         src="https://i.imgur.com/HqPtjae.jpg"
@@ -20,7 +20,7 @@ const HomeSlideShow = () => {
                         <p>From Warner Bros. Pictures comes "The Batman," with director Matt Reeves (the "Planet of the Apes" films) at the helm and with Robert Pattinson ("Tenet," "The Lighthouse," "Good Time") starring as Gotham City's vigilante detective, Batman.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-10 h-10"
                         src="https://i.imgur.com/hTCIkuB.jpg"
