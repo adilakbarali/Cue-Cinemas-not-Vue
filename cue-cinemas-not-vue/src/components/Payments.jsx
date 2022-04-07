@@ -30,13 +30,15 @@ const Payments = () => {
 
     return (
         <>
+        <br></br>
         <Card className="paymentCard" style={{ width: '40rem' }}> 
-        <Card.Text className="paymentText">Please Enter your Booking Reference Number (Paste into the box below):</Card.Text>
-        <Form.Control type="text" placeholder="Booking Reference Number" ref={findBooking}/>
+        <Card.Text className="paymentTitle">Please Enter your Booking Reference Number (Paste into the box below):</Card.Text>
+        <Form.Control type="text" className="paymentForm"  placeholder="Booking Reference Number" ref={findBooking}/>
         <Button variant="primary" onClick={getBooking}>Find Booking!</Button>
+        
         {bookingData !== "" &&
             <>
-            <Card.Text className="paymentText">Hello {bookingData.full_name}!</Card.Text>
+            <Card.Text className="paymentText"><br></br>{bookingData.full_name}!</Card.Text>
             <Card.Text className="paymentText">You have booked a total of {bookingData.number_of_seats} tickets, including {bookingData.number_of_adults} Adults and {bookingData.number_of_children} Children</Card.Text>
             <Card.Text className="paymentText">Alongside this, you have ordered {bookingData.concessions.length} items from our concessions.</Card.Text>
             </>
@@ -44,7 +46,7 @@ const Payments = () => {
             {totalCost !== "" &&
             <>
             <Card.Text className="paymentText">The total cost of this booking is: £{totalCost}</Card.Text>
-            <PayPalButton amount={totalCost} options={{clientId: "sb", currency: "GBP"}} onSuccess={(details, data) => { alert("Transaction completed by " + details.payer.name.given_name);}}/>
+            <PayPalButton className="paymentText" amount={totalCost} options={{clientId: "sb", currency: "GBP"}} onSuccess={(details, data) => { alert("Transaction completed by " + details.payer.name.given_name);}}/>
             </>
         }
         </Card>    
