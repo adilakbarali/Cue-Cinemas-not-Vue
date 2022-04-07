@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import emailjs from "emailjs-com";
 
 
 class ContactForm extends Component {    
@@ -49,9 +50,15 @@ class ContactForm extends Component {
         this.setState({ [name]: value });    
     }    
     
-    handleSubmit = (e) => {    
-        e.preventDefault();    
-    
+    handleSubmit = (e) => {   
+        e.preventDefault();
+
+    emailjs.sendForm('service_8h535gp', 'template_3t8jo1l', e.target, 'uFgWOuAuQZlnzB6aA')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      }); 
         if (this.handleFormValidation()) {    
             alert('Your message has been sent!')    
             this.setState(this.initialState)    
