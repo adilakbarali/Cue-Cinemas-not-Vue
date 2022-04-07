@@ -46,6 +46,20 @@ describe("Test Booking", () => {
         return done();
       });
   });
+
+
+  it("Should get latest bookings", (done) => {
+    chai
+    .request(server)
+    .get("/testBooking/getLatest")
+    .end((err, res) => {
+      expect(err).to.be.null;
+      expect(res).to.have.status(200);
+      return done();
+    });
+  });
+
+
   it("Should find booking by id", (done) => {
     chai
       .request(server)
