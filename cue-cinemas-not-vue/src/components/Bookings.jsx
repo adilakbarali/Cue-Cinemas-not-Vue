@@ -4,6 +4,7 @@ import { Form, Button, Container, Card } from 'react-bootstrap';
 import Movies from './Movies';
 import BookingForm from './BookingForm';
 import Col from 'react-bootstrap/Col';
+import UpcomingMovies from './UpcomingMovies';
 
 const Bookings = (sID) => {
 
@@ -69,14 +70,14 @@ const Bookings = (sID) => {
             </Form.Select>
             <br></br><br></br>
             {loadedScreens &&
-                <Movies data={outputMovie} />}
+                <UpcomingMovies data={outputMovie} />}
             <h2 className="movies">Showing at:</h2>
             <Card className="opening-times-table" style={{width:'40rem'}}>
                 <Card.Body className="bg-dark">
                 {loadedScreens &&
                     screenData.map((screen, key) => {
                         
-                        return <Button className="primary" variant="primary" onClick={(e) => setScreen(screen._id)}> {new Date(screen.date_time).toLocaleString('en-US')} </Button>;
+                        return <Button className="primary" variant="primary" onClick={(e) => setScreen(screen._id)}> {new Date(screen.date_time).toLocaleString('en-UK')} - {screen.screen_type} </Button>;
                         
                         
                         
