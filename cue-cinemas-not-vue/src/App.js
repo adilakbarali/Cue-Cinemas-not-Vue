@@ -19,7 +19,7 @@ import PlacesToGoPage from './components/PlacesToGoPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Forum from './components/Forum';
 import ScreensPage from './components/ScreensPage';
-
+import Payments from './components/Payments';
 
 
 
@@ -43,7 +43,7 @@ function App() {
           <Route path="/OpeningTimes" element={<OpeningTimesPage />}></Route>
           <Route path="/Classification" element={<Classification/>}></Route>
           <Route path="/DiscussionForum" element={<Forum/>}></Route>
-        
+          <Route path="/Payment" element={<Payments/>}></Route>
 
           <Route path="/Forum" element={<Forum />}></Route>
           <Route path='/ScreensPage' element={<ScreensPage />}></Route>

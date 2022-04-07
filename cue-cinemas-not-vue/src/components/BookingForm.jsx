@@ -67,7 +67,9 @@ const BookingForm = (sID) => {
         <br></br>
         <Card className="bg-dark text-white" style={{width:'40rem'}}>
             {bookSuccess &&
-            <Alert variant="success">Booking Successful!
+            <Alert variant="success">
+                Booking Successful!
+                Your Booking ID is: {bookingId}. This has been copied to your clipboard.
                 <div className="d-flex justify-content-end">
                     <Link to="/Payment">
                     <Button onClick={() => {navigator.clipboard.writeText(bookingId)}} variant="outline-success">
