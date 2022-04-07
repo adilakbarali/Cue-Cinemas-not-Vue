@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { useRef } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { useRef, useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const BookingForm = (sID) => {
     
@@ -10,6 +11,9 @@ const BookingForm = (sID) => {
     const post_adults = useRef(null);
     const post_children = useRef(null);
     var post_concessions = [];
+    const [bookingId, setBookingId] = useState("");
+    const [bookFail, setBookFail] = useState(false);
+    const [bookSuccess, setBookSuccess] = useState(false);
 
     const appendConcession = (event) => {
         var e = event.target;
@@ -36,23 +40,58 @@ const BookingForm = (sID) => {
             "number_of_children" : parseInt(post_children.current.value),
             "concessions" : post_concessions
         }
-        console.log(booking);
         axios.post('http://localhost:4494/booking/create', booking)
         .then((response) => {
             console.log(response);
+            if(response.status === 201){
+                getLatest();
+            }
+            else{
+                setBookFail(true);
+            }
         })
     };
 
+    const getLatest = () => {
+        axios.get('http://localhost:4494/booking/getLatest')
+        .then((response) => {
+            console.log(response.data[0]);
+            setBookingId(response.data[0]._id);
+            console.log(bookingId);
+            setBookSuccess(true);
+        })
+    }
+
     return ( 
         <>
-        <Card className="bg-dark text-white" style={{width:'20rem'}}>
+        <br></br>
+        <Card className="bg-dark text-white" style={{width:'40rem'}}>
+            {bookSuccess &&
+            <Alert variant="success">
+                Booking Successful!
+                Your Booking ID is: {bookingId}. This has been copied to your clipboard.
+                <div className="d-flex justify-content-end">
+                    <Link to="/Payment">
+                    <Button onClick={() => {navigator.clipboard.writeText(bookingId)}} variant="outline-success">
+                     Click me to pay for your booking!
+                    </Button>
+                    </Link>
+                </div>
+            </Alert>
+            }
+            {bookFail &&
+            <Alert variant="danger">
+                <Alert.Heading>Booking Failed.</Alert.Heading>
+                Please try again later.
+            </Alert>
+            }            
             <Form>
                 <Form.Group className="mb-3" controlId="formFullName">
-                    <Form.Label>Full Name</Form.Label>
+                    <Form.Label> Full Name </Form.Label>
                     <Form.Control type="text" placeholder="Enter full name" ref={post_name}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfSeats">
-                    <Form.Label>Number Of Seats</Form.Label>
+                    <Form.Label> Number Of Seats </Form.Label>
                     <Form.Select type="select" ref={post_seats}>
                     <option>1</option>
                     <option>2</option>
@@ -65,7 +104,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfAdults">
-                    <Form.Label>Number Of Adults</Form.Label>
+                    <Form.Label> Number Of Adults </Form.Label>
                     <Form.Select type="select" ref={post_adults}>
                     <option>1</option>
                     <option>2</option>
@@ -78,7 +117,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formNumberOfChildren">
-                    <Form.Label>Number Of Children</Form.Label>
+                    <Form.Label> Number Of Children </Form.Label>
                     <Form.Select type="select" ref={post_children}>
                     <option>0</option>
                     <option>1</option>
@@ -92,7 +131,7 @@ const BookingForm = (sID) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formConcessions">
-                    <Form.Label>Concessions</Form.Label>
+                    <Form.Label> Concessions </Form.Label>
                     <Form.Check type="checkbox" label="Salted Popcorn (Small)" value="Salted Popcorn (Small)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Salted Popcorn (Large)" value="Salted Popcorn (Large)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Sweet Popcorn (Small)" value="Sweet Popcorn (Small)" onChange={appendConcession}/>
@@ -105,6 +144,7 @@ const BookingForm = (sID) => {
                     <Form.Check type="checkbox" label="Soft Drink (Medium)" value="Soft Drink (Medium)" onChange={appendConcession}/>
                     <Form.Check type="checkbox" label="Soft Drink (Large)" value="Soft Drink (Large)" onChange={appendConcession}/>
                 </Form.Group>
+                
                 <Button variant="primary" type="button" onClick={sendData}>
                     Book!
                 </Button>

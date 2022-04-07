@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBFooter } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return ( 
@@ -10,8 +11,12 @@ const Footer = () => {
           <div className='row mt-3'>
             <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
+                <br></br>
                 <i className='fas fa-gem me-3'></i>Cue Not Vue Cinemas ©
               </h6>
+              <Link to="/"> Home Page</Link> <br></br>
+              <Link to="/AboutUs"> About Us</Link> <br></br>
+              <Link to= "/ContactUs">Contact Us</Link>
               <p>
                Founded in 2022, CueNotVue corporation prides itself on providing comfort and top quality entertainment to people of all backgrounds.
                <br />
@@ -20,6 +25,7 @@ const Footer = () => {
             </div>
 
             <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
+              <br></br>
               <h6 className='text-uppercase fw-bold mb-4'>Connect with us</h6>
               <p>
                 <a href='#!' className='text-reset'>
@@ -44,6 +50,7 @@ const Footer = () => {
             </div>
 
             <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
+              <br></br>
               <h6 className='text-uppercase fw-bold mb-4'>Causes we support</h6>
               <p>
                 <a href='#!' className='text-reset'>
@@ -52,7 +59,7 @@ const Footer = () => {
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Refugee helpine
+                  Refugee helpline
                 </a>
               </p>
               <p>
@@ -68,6 +75,7 @@ const Footer = () => {
             </div>
 
             <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
+              <br></br>
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
                 <i className='fas fa-home me-3'></i> Glasgow, G34 9DL, UK

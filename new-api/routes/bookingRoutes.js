@@ -10,6 +10,15 @@ router.get("/getAll", async (req, res, next) => {
     }
 });
 
+router.get("/getLatest", async (req, res, next) => {
+    try {
+        const booking = await Booking.find().sort({ _id: -1 }).limit(1);
+        return res.json(booking);
+    } catch (err) {
+        return next({ status: 400, message: err.message});
+    }
+})
+
 router.get("/get/:id", async ({ params: { id }}, res, next) => {
     try{
         const found = await Booking.findById(id);
@@ -26,21 +35,21 @@ router.post('/create', ({ body: booking }, res, next) => {
       .catch((err) => next({ status: 400, message: err.message }));
   });
 
-router.put("/replace/:id", async({ query: newBooking, params: { id }}, res, next) => {
-    try{
-        await Booking.findByIdAndUpdate(id, newBooking);
-        const updatedBooking = await Booking.findById(id);
-        return res.status(202).send(updatedBooking);
-    }catch (error) {
-        return next({ status: 400, message: error.message});
-    }
-});
+// router.put("/replace/:id", async({ query: newBooking, params: { id }}, res, next) => {
+//     try{
+//         await Booking.findByIdAndUpdate(id, newBooking);
+//         const updatedBooking = await Booking.findById(id);
+//         return res.status(202).send(updatedBooking);
+//     }catch (error) {
+//         return next({ status: 400, message: error.message});
+//     }
+// });
 
-router.delete("/remove/:id", ({ params: { id }}, res, next) => {
-    Booking.findByIdAndDelete(id, (err) => {
-        if (err) return next({ status: 400, message: err.message});
-        return res.sendStatus(204);
-    });
-});
+// router.delete("/remove/:id", ({ params: { id }}, res, next) => {
+//     Booking.findByIdAndDelete(id, (err) => {
+//         if (err) return next({ status: 400, message: err.message});
+//         return res.sendStatus(204);
+//     });
+// });
 
 module.exports = router;

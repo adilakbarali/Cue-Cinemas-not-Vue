@@ -6,18 +6,15 @@ const FindUs = () => {
   return (
     <>
       <br />
-      <h1> How to Find Us </h1>
       <br />
       <FindUsCard />
       <br />
-      <br />
-      <h3> Directions and Transport Links: </h3>
-      <br />
+      <br/>
       <DirectionsCard />
       <br />
       <br/>
-      <h3> Google Map: </h3>
       <MapCard />
+
     </>
   );
 };

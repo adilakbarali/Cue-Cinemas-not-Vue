@@ -35,15 +35,14 @@ const NewReleasesPage = () => {
 
   // Make if else statements to determine what our react app should return
   if(error) { // If there is an error or if error is not null (undefined)
-    return <p> Oops, there has been an error D: {error.message}</p>
+    return <p> Oops, there has been an error; {error.message}</p>
 } else if (!loaded) {  // if loaded is false
     return <p> We are loading the great films we have to offer!</p>
 } else {
     return (
-      <>        <div>
-          <p> Films showing </p>
-        
-        <p> Upcoming Movies </p>
+      <>   
+      <div>
+          <p className="movies"> Films showing </p>
 
 
         {movieData.map((movie, key) => {

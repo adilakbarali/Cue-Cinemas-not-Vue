@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-mongoose.connect("mongodb+srv://admin-1:root@cluster0.06yd2.mongodb.net/main?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-});
+
 
 const movieSchema = new Schema({
     title: {
@@ -28,6 +26,10 @@ const movieSchema = new Schema({
     },
     rating: {
       type: Number,
+      required: true,
+    },
+    images: {
+      type: Array,
       required: true,
     }
   });

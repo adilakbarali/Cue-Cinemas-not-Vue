@@ -5,18 +5,18 @@ import { ListGroup, ListGroupItem, Button, Row, Container } from "react-bootstra
 import Col from 'react-bootstrap/Col';
 
 const UpcomingMovies = ({ data }) => {
-    
+
     let actorString = ""
     for (let i = 0; i < data.actors.length; i++) {
         actorString = actorString + data.actors[i] + ", "
     }
 
 
-    
+
     return (
-        
+
         <>
-            <Container>
+            <Container className="ContainerClass">
                 <Row>
                     <Col>
                         <img src={data.images[0]}
@@ -24,24 +24,24 @@ const UpcomingMovies = ({ data }) => {
                             height='261px' />
                     </Col>
                     <Col>
-                        <Card style={{ width: '40rem' }}>
+                        <Card className="moviesCard" style={{ width: '40rem' }}>
                             <Card.Body>
-                                <Card.Title>Film: {data.title}</Card.Title>
-                                <Card.Text>
-                                    {data.description}
+                                <Card.Title className="moviesTitle">{data.title}</Card.Title>
+                                <Card.Text className="moviesCast">
+                                Cast: {actorString}
                                 </Card.Text>
                             </Card.Body>
-                            <ListGroup className="list-group-flush">
-                                <ListGroupItem>Cast: {actorString}</ListGroupItem>
-                            </ListGroup>
-                            <Card.Body>
-                                Release date: {data.release_date}
+                            <Card.Body className="list-group-flush">
+                                <Card.Text className="moviesDescription">{data.description}</Card.Text>
+                            </Card.Body>
+                            <Card.Body className="moviesCast">
+                                Release date: {new Date(data.release_date).toLocaleString('en-UK')}
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
-                <br></br><br></br> <br></br>
             </Container>
+            <br></br><br></br> <br></br>
         </>
 
 

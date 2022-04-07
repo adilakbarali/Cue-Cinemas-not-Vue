@@ -1,0 +1,30 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/new-api/node_modules
+/cue-cinemas-not-vue/node_modules
+/new-api/.pnp
+/cue-cinemas-not-vue/.pnp
+/new-api/.nyc_output/*
+.pnp.js
+
+
+
+# testing
+/new-api/coverage
+/cue-cinemas-not-vue/coverage
+# production
+/new-api/build
+/cue-cinemas-not-vue/build
+
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
