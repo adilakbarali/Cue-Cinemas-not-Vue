@@ -3,14 +3,24 @@ const express = require("express");
 const parser = require("body-parser");
 const cors = require("cors");
 const app = express();
-
 app.use(parser.json());
 app.use(cors());
+const config = require("config")
 
 const movieRoutes = require("./routes/movieRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const screenRoutes = require("./routes/screenRoutes");
 const discussionRoutes = require("./routes/discussionRoutes");
+const { default: mongoose } = require("mongoose");
+const mainConnect = require("./connections/mainConnect");
+const testConnect = require("./connections/testConnect");
+
+if(config.util.getEnv("NODE_ENV")!=='test'){
+  mongoose.connect(mainConnect.url)
+}else {
+  mongoose.connect(testConnect.url)
+}
+
 
 app.use((req, res, next) => {
   // eslint-disable-next-line no-console
