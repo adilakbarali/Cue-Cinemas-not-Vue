@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/esm/Card";
 import React from "react";
-import { ListGroup, ListGroupItem, Button, Row, Container } from "react-bootstrap";
+import { ListGroup, ListGroupItem, Button, Row, Container} from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 import Col from 'react-bootstrap/Col';
 
@@ -37,10 +38,15 @@ const Movies = ({ data }) => {
                                 <Card.Text className="moviesDescription">{data.description}</Card.Text>
                             </Card.Body>
                             <Card.Body>
-                                <p>
-                                    <Button variant="primary">Book now</Button> {''}
-                                    <Button variant="primary">Reviews</Button>
-                                </p>
+                                
+                                    <Link to="/Bookings">
+                                    <Button variant="primary" >Book Now</Button>
+                                    </Link>
+                                     {" "}
+                                     <Link to="/DiscussionForum">
+                                    <Button variant="primary" >Reviews</Button>
+                                    </Link>
+                                
                             </Card.Body>
                         </Card>
                     </Col>
