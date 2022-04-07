@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-mongoose.connect("mongodb+srv://admin-1:root@cluster0.06yd2.mongodb.net/main?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-});
+
 
 const discussionSchema = new Schema({
     full_name: {
