@@ -30,6 +30,10 @@ const movieSchema = new Schema({
     rating: {
       type: Number,
       required: true,
+    },
+    images: {
+      type: Array,
+      required: true,
     }
   });
 

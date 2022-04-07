@@ -27,7 +27,7 @@ const bookingSchema = new Schema({
         required: true,
     },
     concessions: {
-        type: Array,
+        type: [String],
         required: true,
     }
   });

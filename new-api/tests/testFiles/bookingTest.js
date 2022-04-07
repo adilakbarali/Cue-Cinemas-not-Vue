@@ -21,7 +21,9 @@ describe("Test Booking", () => {
             number_of_seats: 1,
             number_of_adults: 1,
             number_of_children: 0,
-            concessions: ["Salted Popcorn (Large)", "Soft Drink (Large)"]
+            concessions:        [
+              "Salted Popcorn (Large)", "Soft Drink (Large)"
+            ]
           },
           (error, created) => {
             if (!error) {
@@ -29,10 +31,10 @@ describe("Test Booking", () => {
             }
             return done();
           }
-        );
+        )
       }
-    });
-  });
+    })
+  })
 
   it("Should find ALL bookings", (done) => {
     chai
@@ -59,10 +61,9 @@ describe("Test Booking", () => {
         expect(res.body).to.haveOwnProperty("number_of_seats", 1);
         expect(res.body).to.haveOwnProperty("number_of_adults", 1);
         expect(res.body).to.haveOwnProperty("number_of_children", 0);
-        expect(res.body).to.haveOwnProperty("concessions", [
-          "Salted Popcorn (Large)",
-          "Soft Drink (Large)",
-        ]);
+        expect(res.body.concessions).to.eql([
+          "Salted Popcorn (Large)", "Soft Drink (Large)"
+        ],);
         return done();
       });
   });
@@ -76,7 +77,9 @@ describe("Test Booking", () => {
         number_of_seats: 8,
         number_of_adults: 4,
         number_of_children: 4,
-        concessions: ["Salted Popcorn (Small)", "Nachos", "Soft Drink (Large)"]
+        concessions:        [
+          "Salted Popcorn (Large)","Soft Drink (Large)"
+        ]
       })
       .end((err, res) => {
         expect(err).to.be.null;

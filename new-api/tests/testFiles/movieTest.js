@@ -52,7 +52,7 @@ describe("Test Movie", () => {
       });
   });
 
-  it.skip("Should find movie by id", (done) => {
+  it("Should find movie by id", (done) => {
     chai
       .request(server)
       .get("/testmovie/get/" + testMovie._id)
@@ -64,7 +64,7 @@ describe("Test Movie", () => {
           "release_date",
           "2022-03-04T23:00:00.000Z"
         );
-        expect(res.body).to.haveOwnProperty("actors", [
+        expect(res.body.actors).to.eql( [
           "Robert Pattison"
         ]);
         expect(res.body).to.haveOwnProperty("director", "Matt Reeves");
@@ -73,11 +73,10 @@ describe("Test Movie", () => {
           "A movie based on Batman's second year of fighting crime and follows him as he explores Gotham City's corruption and faces the Riddler, a riddle-obsessed serial killer."
         );
         expect(res.body).to.haveOwnProperty("rating", 8.5);
-        expect(res.body).to.haveOwnProperty("images", [
+        expect(res.body.images).to.eql( [
           "https://i.imgur.com/DxlKIo3.jpg",
           "https://i.imgur.com/HqPtjae.jpg",
         ]);
-        expect(res.body).to.haveOwnProperty("_v", 0);
         return done();
       });
   });
