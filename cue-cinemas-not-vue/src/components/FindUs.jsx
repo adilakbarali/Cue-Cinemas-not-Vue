@@ -9,34 +9,8 @@ const FindUs = () => {
       <br />
       <FindUsCard />
       <br />
-      <br />
-      <br />
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
       <br/>
       <DirectionsCard />
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br />
-      <br/>
-      <br/>
-      <br />
-      <br/>
       <br />
       <br/>
       <MapCard />

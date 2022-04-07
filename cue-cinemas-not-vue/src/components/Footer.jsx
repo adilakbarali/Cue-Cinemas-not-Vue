@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBFooter } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return ( 
@@ -13,6 +14,9 @@ const Footer = () => {
                 <br></br>
                 <i className='fas fa-gem me-3'></i>Cue Not Vue Cinemas ©
               </h6>
+              <Link to="/"> Home Page</Link> <br></br>
+              <Link to="/AboutUs"> About Us</Link> <br></br>
+              <Link to= "/ContactUs">Contact Us</Link>
               <p>
                Founded in 2022, CueNotVue corporation prides itself on providing comfort and top quality entertainment to people of all backgrounds.
                <br />

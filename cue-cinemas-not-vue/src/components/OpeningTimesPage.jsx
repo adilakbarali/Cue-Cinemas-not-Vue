@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 const OpeningTimesPage = () => {
   return (
     <>
-      <div className="opening-times-header">
+      <div className="screens-title">
         <h2>Opening & Closing Times</h2>
       </div>
       <br />
