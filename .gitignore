@@ -5,6 +5,7 @@
 /cue-cinemas-not-vue/node_modules
 /new-api/.pnp
 /cue-cinemas-not-vue/.pnp
+/new-api/.nyc_output/*
 .pnp.js
 
 
