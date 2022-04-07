@@ -102,10 +102,10 @@ class ContactForm extends Component {
                         </div>    
                         <div>    
 
-                            <label htmlFor="text">Message</label>    
+                            <label htmlFor="text" className="opening-table-body">Message</label>    
                             <br />
                             <br />
-                            <textarea type="text" name="message" rows={5} cols={160}
+                            <textarea type="text" name="message" rows={5} cols={76}
                                 value={this.state.message}    
                                 onChange={this.handleChange}    
                                 placeholder="Please enter your message.."    
